@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copyright/wipeoutr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/rc_gen.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/solver_runtime.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/testcases_runtime.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/ts_gen.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/ts_select.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/wipeoutr_fm.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/wipeoutr_t.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/linux-2.6.33.3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/linux-2.6.33.3_16600_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/linux-2.6.33.3_4370_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/10/10_0/linux-2.6.3_10_0_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/10/10_50/linux-2.6.3_10_50_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/10/10_50_nonred/linux-2.6.3_10_50_s_nonred.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/10/10_90/linux-2.6.3_10_90_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/10/10_90_nonred/linux-2.6.3_10_90_s_nonred.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/100/100_0/linux-2.6.3_100_0_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/100/100_50/linux-2.6.3_100_50_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/100/100_90/linux-2.6.3_100_90_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/250/250_0/linux-2.6.3_250_0_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/250/250_50/linux-2.6.3_250_50_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/250/250_90/linux-2.6.3_250_90_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/50/50_0/linux-2.6.3_50_0_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/50/50_50/linux-2.6.3_50_50_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scenarios/50/50_90/linux-2.6.3_50_90_s.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/testsuite/linux-2.6.33.3.testsuite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/algorithm/WipeOutR_FM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/algorithm/WipeOutR_T.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/cli/CmdLineOptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/cli/ConfigManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/data/RedConstraintsGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/data/TestCasesSelectorV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/data/TestSuiteGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/eval/RuntimeForTestcasesV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/eval/SolverRuntimeEvaluation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/eval/WipeOutFMEvaluationV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/eval/WipeOutTEvaluationV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/common/ArrayUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/eval/WipeOutEvaluation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/model/FMWipeOutFMModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/model/FMWipeOutTModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/model/IKBRedundancyDetectable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/model/ITestCaseRedundancyDetectable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/testcases/builder/TestCaseBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/wipeoutr/algorithm/WipeOutRFMTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/wipeoutr/algorithm/WipeOutRTTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/wipeoutr/model/FMWipeOutTModelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/wipeoutr/testmodel/WipeOutR_FM_Model1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/wipeoutr/testmodel/WipeOutR_FM_Model2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/wipeoutr/testmodel/WipeOutR_T_Model1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/wipeoutr/testmodel/WipeOutR_T_Model2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/csp1.mzn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/csp2.mzn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/csp3.mzn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/linux-2.6.33.3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/linux-2.6.3_10_0.testcases" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/logback-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2AIW7AWy0M2I6jTfZCCs7RhvFp3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "/Users/manleviet/Development/GitHub/WipeOutR/src/main/java",
+    "last_opened_file_path": "/Users/manleviet/Development/GitHub/WipeOutR/src/test/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "copyright.profiles"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/wipeoutr/testmodel" />
+      <recent name="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/wipeoutr/algorithm" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/model" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="at.tugraz.ist.ase.wipeoutr.model" />
+      <recent name="at.tugraz.ist.ase.wipeoutr.testcases.builder" />
+      <recent name="at.tugraz.ist.ase.wipeoutr.eval" />
+      <recent name="at.tugraz.ist.ase.wipeoutr.common" />
+      <recent name="at.tugraz.ist.ase.wipeoutr.app.data" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="" />
+      <created>1654697409724</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654697409724</updated>
+      <workItem from="1654697411039" duration="3013000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
