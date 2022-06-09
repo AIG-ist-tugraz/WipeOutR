@@ -20,7 +20,7 @@ import lombok.experimental.UtilityClass;
 public class ArrayUtils {
     /**
      * Creates an indexes array, in which each element is (the index of the element + 1).
-     * Ex: with size = 4, [1, 2, 3, 4] is returned.
+     * Ex: with size = 4, the array [1, 2, 3, 4] is returned.
      */
     public Integer[] createIndexesArray(int size) {
         Integer[] indexesArr = new Integer[size];

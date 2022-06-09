@@ -18,7 +18,7 @@ import at.tugraz.ist.ase.kb.fm.FMKB;
 import at.tugraz.ist.ase.wipeoutr.algorithm.WipeOutR_FM;
 import at.tugraz.ist.ase.wipeoutr.app.cli.CmdLineOptions;
 import at.tugraz.ist.ase.wipeoutr.app.cli.ConfigManager;
-import at.tugraz.ist.ase.wipeoutr.model.FMWipeOutFMModel;
+import at.tugraz.ist.ase.wipeoutr.model.WipeOutRFMModel;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -29,7 +29,7 @@ import java.util.List;
 
 import static at.tugraz.ist.ase.wipeoutr.algorithm.WipeOutR_FM.TIMER_WIPEOUTR_FM;
 import static at.tugraz.ist.ase.wipeoutr.app.cli.ConfigManager.defaultConfigFile_WipeOutFMEvaluationV2;
-import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutEvaluation.*;
+import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutREvaluation.*;
 
 /**
  * An evaluation for WipeOutR_FM algorithm
@@ -47,12 +47,13 @@ import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutEvaluation.*;
  *
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
-public class WipeOutFMEvaluationV2 {
+public class WipeOutRFMEvaluationV2 {
 
     public static void main(String[] args) throws IOException, FeatureModelParserException {
         String programTitle = "WipeOutR_FM Evaluation - Feature Model";
         String usage = "Usage: java -jar wipeoutr_fm.jar [options]]";
 
+        // Parse command line arguments
         CmdLineOptions cmdLineOptions = new CmdLineOptions(null, programTitle, null, usage);
         cmdLineOptions.parseArgument(args);
 
@@ -86,7 +87,7 @@ public class WipeOutFMEvaluationV2 {
         writer.write("\t#Choco constraints of the original model: " + numChocoConstraintsOriginalModel + "\n");
 
         // FMWipeOutFMModel
-        FMWipeOutFMModel model = new FMWipeOutFMModel(featureModel); // generate CSP constraints and its negative constraints
+        WipeOutRFMModel model = new WipeOutRFMModel(featureModel); // generate CSP constraints and its negative constraints
         model.initialize();
         // Checker
         ChocoConsistencyChecker checker = new ChocoConsistencyChecker(model);

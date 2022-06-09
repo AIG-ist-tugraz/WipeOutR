@@ -15,7 +15,7 @@ import at.tugraz.ist.ase.test.ITestCase;
 import at.tugraz.ist.ase.test.TestCase;
 import at.tugraz.ist.ase.test.TestSuite;
 import at.tugraz.ist.ase.test.builder.fm.FMTestCaseBuilder;
-import at.tugraz.ist.ase.wipeoutr.model.FMWipeOutTModel;
+import at.tugraz.ist.ase.wipeoutr.model.WipeOutRTModel;
 import at.tugraz.ist.ase.wipeoutr.testmodel.WipeOutR_T_Model1;
 import at.tugraz.ist.ase.wipeoutr.testmodel.WipeOutR_T_Model2;
 import org.junit.jupiter.api.Test;
@@ -118,7 +118,7 @@ class WipeOutRTTest {
         // t6: Stat = true
         TestSuite testSuite = TestSuite.builder().testCases(testCaseList).build();
 
-        FMWipeOutTModel testCaseModel = new FMWipeOutTModel(fm, testSuite);
+        WipeOutRTModel testCaseModel = new WipeOutRTModel(fm, testSuite);
         testCaseModel.initialize();
 
         System.out.println("=========================================");

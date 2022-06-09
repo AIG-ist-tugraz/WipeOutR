@@ -39,7 +39,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
-class FMWipeOutTModelTest {
+class WipeOutRTModelTest {
     @Test
     void shouldCloneable() throws FeatureModelParserException, IOException, CloneNotSupportedException {
         FeatureIDEParser parser = new FeatureIDEParser();
@@ -55,10 +55,10 @@ class FMWipeOutTModelTest {
         @Cleanup InputStream is = new FileInputStream(fileTS);
         TestSuite testSuite = factory.buildTestSuite(is, testCaseFactory);
         // FMWipeOutTModelTest
-        FMWipeOutTModel testCaseModel = new FMWipeOutTModel(featureModel, testSuite);
+        WipeOutRTModel testCaseModel = new WipeOutRTModel(featureModel, testSuite);
         testCaseModel.initialize();
 
-        FMWipeOutTModel clone = (FMWipeOutTModel) testCaseModel.clone();
+        WipeOutRTModel clone = (WipeOutRTModel) testCaseModel.clone();
 
         assertNotSame(testCaseModel.getModel(), clone.getModel());
         for (int i = 0; i < testCaseModel.getTestcases().size(); i++) {
@@ -184,7 +184,7 @@ class FMWipeOutTModelTest {
         // t6: Stat = true
         TestSuite testSuite = TestSuite.builder().testCases(testCaseList).build();
 
-        FMWipeOutTModel testCaseModel = new FMWipeOutTModel(fm, testSuite);
+        WipeOutRTModel testCaseModel = new WipeOutRTModel(fm, testSuite);
         testCaseModel.initialize();
 
         System.out.println("=========================================");
@@ -218,7 +218,7 @@ class FMWipeOutTModelTest {
 
         // in a parallel scenario, T doesn't change, whereas the model changes
         // this test should be work to show that the algorithm works well in parallel scenarios
-        FMWipeOutTModel testCaseModel_clone = (FMWipeOutTModel) testCaseModel.clone();
+        WipeOutRTModel testCaseModel_clone = (WipeOutRTModel) testCaseModel.clone();
         ChocoConsistencyChecker checker_new = new ChocoConsistencyChecker(testCaseModel_clone);
         WipeOutR_T wipeOut_new = new WipeOutR_T(checker_new);
 

@@ -14,7 +14,7 @@ import at.tugraz.ist.ase.cacdr.eval.CAEvaluator;
 /**
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
-public class WipeOutEvaluation extends CAEvaluator {
+public class WipeOutREvaluation extends CAEvaluator {
 
     public static final String TIMER_RUNNING = "Running time:";
     public static final String TIMER_SOLUTION = "Solution time:";

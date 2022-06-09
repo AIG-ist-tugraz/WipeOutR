@@ -27,24 +27,25 @@ import org.chocosolver.solver.constraints.nary.cnf.LogOp;
 import org.chocosolver.solver.variables.BoolVar;
 
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 
 import static at.tugraz.ist.ase.common.ChocoSolverUtils.getVariable;
 
 /**
+ * Manages/Prepares the inputs (constraints/test cases) for the WipeOutR_T algorithm.
+ *
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
 @Slf4j
-public class FMWipeOutTModel extends CDRModel implements IChocoModel, IDebuggingModel {
+public class WipeOutRTModel extends CDRModel implements IChocoModel, IDebuggingModel {
 
     @Getter
-    private Model model;
+    private Model model; // Choco model
+    private FMKB fmkb; // store the feature model knowledge base (variables, domains, constraints)
 
     private final FeatureModel fm;
-    private FMKB fmkb;
-    private TestSuite testSuite;
+
+    private TestSuite testSuite; // store the test suite
 
     /**
      * The set of test cases.
@@ -60,32 +61,30 @@ public class FMWipeOutTModel extends CDRModel implements IChocoModel, IDebugging
      * @param fm a {@link FeatureModel}
      * @param testSuite a {@link TestSuite}
      */
-    public FMWipeOutTModel(FeatureModel fm, TestSuite testSuite) {
+    public WipeOutRTModel(FeatureModel fm, TestSuite testSuite) {
         super(fm.getName());
 
         this.fm = fm;
-        this.fmkb = new FMKB(fm, false);
+        this.fmkb = new FMKB(fm, false); // translate the feature model into variables and constraints
         this.testSuite = testSuite;
         this.model = fmkb.getModelKB();
     }
 
     /**
-     * This function creates a Choco models, variables, constraints
-     * for a corresponding feature models. Besides, test cases are
-     * also translated to Choco constraints.
+     * This function translates the test cases into Choco constraints.
      */
     @Override
     public void initialize() {
         log.debug("{}Initializing FMWipeOutTModel for {} >>>", LoggerUtils.tab(), getName());
         LoggerUtils.indent();
 
-        // sets possibly faulty constraints to super class
-        log.trace("{}Adding possibly faulty constraints", LoggerUtils.tab());
-        List<at.tugraz.ist.ase.kb.core.Constraint> C = new LinkedList<>(fmkb.getConstraintList());
-//        Collections.reverse(C);
-        this.setPossiblyFaultyConstraints(C);
+        // doesn't need sets possibly faulty constraints to super class
+//        log.trace("{}Adding possibly faulty constraints", LoggerUtils.tab());
+//        List<at.tugraz.ist.ase.kb.core.Constraint> C = new LinkedList<>(fmkb.getConstraintList());
+////        Collections.reverse(C);
+//        this.setPossiblyFaultyConstraints(C);
 
-        // don't need the root constraint since WipeOutR_T only checks isconsistent(t1 & ~t2)
+        // doesn't need the root constraint since WipeOutR_T only checks isconsistent(t1 & ~t2)
 
         // translates test cases to Choco constraints
         log.trace("{}Translating test cases to Choco constraints", LoggerUtils.tab());
@@ -96,7 +95,7 @@ public class FMWipeOutTModel extends CDRModel implements IChocoModel, IDebugging
             testcases.addAll(testSuite.getTestCases());
         }
 
-        // remove all Choco constraints, cause we just need variables and test cases
+        // removes all Choco constraints, cause we just need variables and test cases
         model.unpost(model.getCstrs());
 
         LoggerUtils.outdent();
@@ -162,7 +161,7 @@ public class FMWipeOutTModel extends CDRModel implements IChocoModel, IDebugging
     }
 
     public Object clone() throws CloneNotSupportedException {
-        FMWipeOutTModel clone = (FMWipeOutTModel) super.clone();
+        WipeOutRTModel clone = (WipeOutRTModel) super.clone();
 
         clone.fmkb = new FMKB(fm, false);
         clone.testSuite = (TestSuite) testSuite.clone();

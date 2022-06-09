@@ -16,7 +16,7 @@ import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 
 /**
- * Command line options for the WipeOut application.
+ * Command line options for the WipeOutR applications.
  *
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */

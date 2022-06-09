@@ -20,14 +20,14 @@ import at.tugraz.ist.ase.test.builder.TestSuiteBuilder;
 import at.tugraz.ist.ase.test.builder.fm.FMTestCaseBuilder;
 import at.tugraz.ist.ase.wipeoutr.app.cli.CmdLineOptions;
 import at.tugraz.ist.ase.wipeoutr.app.cli.ConfigManager;
-import at.tugraz.ist.ase.wipeoutr.model.FMWipeOutTModel;
+import at.tugraz.ist.ase.wipeoutr.model.WipeOutRTModel;
 import lombok.Cleanup;
 
 import java.io.*;
 import java.util.Objects;
 
 import static at.tugraz.ist.ase.wipeoutr.app.cli.ConfigManager.defaultConfigFile_RuntimeForTestcasesV2;
-import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutEvaluation.*;
+import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutREvaluation.*;
 
 /**
  * An evaluation for test case execution.
@@ -54,6 +54,7 @@ public class RuntimeForTestcasesV2 {
         String programTitle = "Test case runtime evaluation - WipeOutR_T";
         String usage = "Usage: java -jar ts_runtime.jar [options]]";
 
+        // Parse command line arguments
         CmdLineOptions cmdLineOptions = new CmdLineOptions(null, programTitle, null, usage);
         cmdLineOptions.parseArgument(args);
 
@@ -107,7 +108,7 @@ public class RuntimeForTestcasesV2 {
                     TestSuite testSuite = factory.buildTestSuite(is, testCaseFactory);
 
                     // WipeOutTModel
-                    FMWipeOutTModel testCaseModel = new FMWipeOutTModel(featureModel, testSuite);
+                    WipeOutRTModel testCaseModel = new WipeOutRTModel(featureModel, testSuite);
                     testCaseModel.initialize();
 
                     // Checker

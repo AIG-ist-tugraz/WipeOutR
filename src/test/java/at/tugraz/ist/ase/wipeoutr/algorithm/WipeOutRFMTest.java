@@ -14,7 +14,7 @@ import at.tugraz.ist.ase.fm.core.FeatureModel;
 import at.tugraz.ist.ase.fm.core.FeatureModelException;
 import at.tugraz.ist.ase.fm.core.RelationshipType;
 import at.tugraz.ist.ase.kb.core.Constraint;
-import at.tugraz.ist.ase.wipeoutr.model.FMWipeOutFMModel;
+import at.tugraz.ist.ase.wipeoutr.model.WipeOutRFMModel;
 import at.tugraz.ist.ase.wipeoutr.testmodel.WipeOutR_FM_Model1;
 import at.tugraz.ist.ase.wipeoutr.testmodel.WipeOutR_FM_Model2;
 import org.junit.jupiter.api.Test;
@@ -103,7 +103,7 @@ class WipeOutRFMTest {
         fm.addConstraint(RelationshipType.REQUIRES, fm.getFeature("ABtesting"), Collections.singletonList(fm.getFeature("statistics")));
         fm.addConstraint(RelationshipType.EXCLUDES, fm.getFeature("ABtesting"), Collections.singletonList(fm.getFeature("nonlicense")));
 
-        FMWipeOutFMModel testCaseModel = new FMWipeOutFMModel(fm);
+        WipeOutRFMModel testCaseModel = new WipeOutRFMModel(fm);
         testCaseModel.initialize();
 
         System.out.println("=========================================");

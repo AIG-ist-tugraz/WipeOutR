@@ -55,6 +55,7 @@ public class TestCasesSelectorV2 {
         String programTitle = "Test Cases Selector V2";
         String usage = "Usage: java -jar ts_select.jar [options]]";
 
+        // Parse command line arguments
         CmdLineOptions cmdLineOptions = new CmdLineOptions(null, programTitle, null, usage);
         cmdLineOptions.parseArgument(args);
 
@@ -72,6 +73,8 @@ public class TestCasesSelectorV2 {
         printConf(cfg);
 
         checkAndCreateFolder(cfg.getScenariosPathInResults());
+
+        // Select and save scenarios
         TestCasesSelectorV2 selector = new TestCasesSelectorV2(cfg);
         selector.select();
 
@@ -90,10 +93,6 @@ public class TestCasesSelectorV2 {
 
         System.out.println("Testsuite: " + fileTS.getName());
 
-        select(fileTS, pathTestCases);
-    }
-
-    private void select(File fileTS, String pathTestCases) throws IOException {
         // Read test suite
         System.out.println("\tLoading test suite...");
         readTestSuite(fileTS);
@@ -174,24 +173,33 @@ public class TestCasesSelectorV2 {
         }
     }
 
+    /**
+     * Generate redundant test cases from a list of test cases.
+     * @param testCases list of test cases used to generate redundant test cases
+     * @param numRedundant number of redundant test cases to generate
+     * @return list of redundant test cases
+     */
     private List<ITestCase> generateRedundantTestCases(List<ITestCase> testCases, int numRedundant) {
         if (numRedundant == 0) {
             return new LinkedList<>();
         }
 
+        // number of generated redundant test cases which each testCase needs to generate
         int numGenEachTestCase = (numRedundant / testCases.size()) + 1;
 
         List<ITestCase> redundantTestCases = new LinkedList<>();
+        // for the first to the next to last test cases
         for (int i = 0; i < testCases.size() - 1; i++) {
             TestCase testCase = (TestCase) testCases.get(i);
 
+            // generate redundant test cases
             List<ITestCase> redTCs = generateRedundantTestCases(testCase, numGenEachTestCase);
 
             redundantTestCases.addAll(redTCs);
-            numRedundant -= redTCs.size();
+            numRedundant -= redTCs.size(); // update number of redundant test cases still need to generate
         }
 
-        // last test case
+        // for the last test case
         TestCase testCase = (TestCase) testCases.get(testCases.size() - 1);
         List<ITestCase> redTCs = generateRedundantTestCases(testCase, numRedundant);
         redundantTestCases.addAll(redTCs);
@@ -199,9 +207,16 @@ public class TestCasesSelectorV2 {
         return redundantTestCases;
     }
 
+    /**
+     * Generate redundant test cases from a given test case.
+     * @param testCase a test case used to generate redundant test cases
+     * @param numRedundant number of redundant test cases to generate
+     * @return list of redundant test cases
+     */
     private List<ITestCase> generateRedundantTestCases(TestCase testCase, int numRedundant) {
         List<ITestCase> redundantTestCases = new LinkedList<>();
 
+        // get
         List<Set<Integer>> redundantIndexes = getRedundantTC_Indexes();
         for (int i = 0; i < numRedundant; i++) {
             Set<Integer> indexes = redundantIndexes.get(i);
@@ -231,16 +246,21 @@ public class TestCasesSelectorV2 {
     }
 
     private String getTestCaseString(List<Assignment> assignments) {
-        return assignments.parallelStream().map(a -> a.getValue().equals("true") ? a.getVariable() : "~" + a.getVariable()).collect(Collectors.joining(" & "));
+        return assignments.parallelStream().map(a -> a.getValue().equals("true") ? a.getVariable() : "~" + a.getVariable())
+                .collect(Collectors.joining(" & "));
     }
 
+    /**
+     * Get a list of redundant test cases indexes.
+     * @return a list of redundant test cases indexes
+     */
     private List<Set<Integer>> getRedundantTC_Indexes() {
         Set<Integer> targetSet = Sets.newHashSet(ArrayUtils.createIndexesArray(5));
         List<Set<Integer>> combs = new LinkedList<>();
-        combs.addAll(Sets.combinations(targetSet, 4));
-        combs.addAll(Sets.combinations(targetSet, 3));
-        combs.addAll(Sets.combinations(targetSet, 2));
-        combs.addAll(Sets.combinations(targetSet, 1));
+        combs.addAll(Sets.combinations(targetSet, 4)); // redundant test cases having 4 features
+        combs.addAll(Sets.combinations(targetSet, 3)); // redundant test cases having 3 features
+        combs.addAll(Sets.combinations(targetSet, 2)); // redundant test cases having 2 features
+        combs.addAll(Sets.combinations(targetSet, 1)); // redundant test cases having 1 feature
         Collections.shuffle(combs, new Random(RandomUtils.getSEED())); // random with a seed = 141982L
 
         return combs;
@@ -257,7 +277,8 @@ public class TestCasesSelectorV2 {
 
             List<ITestCase>  testCases;
 
-            br.readLine(); // omit header lines
+            // omit header lines
+            br.readLine();
             br.readLine();
             br.readLine();
             br.readLine();

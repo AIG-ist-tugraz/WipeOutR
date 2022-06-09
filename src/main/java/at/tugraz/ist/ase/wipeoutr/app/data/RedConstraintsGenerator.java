@@ -50,6 +50,7 @@ public class RedConstraintsGenerator {
         String programTitle = "Redundant Constraints Generator";
         String usage = "Usage: java -jar rc_gen.jar [options]]";
 
+        // Parse command line arguments
         CmdLineOptions cmdLineOptions = new CmdLineOptions(null, programTitle, null, usage);
         cmdLineOptions.parseArgument(args);
 
@@ -72,7 +73,7 @@ public class RedConstraintsGenerator {
         File fmFile = new File(cfg.getKBFilepath());
         String filename = fmFile.getName();
 
-        // Generate test suite
+        // Generate redundant constraints
         RedConstraintsGenerator generator = new RedConstraintsGenerator(cfg);
 
         System.out.println("Generating redundant constraints for " + filename.toUpperCase() + "...");
@@ -98,11 +99,16 @@ public class RedConstraintsGenerator {
 
         @Cleanup BufferedWriter writer = new BufferedWriter(new FileWriter(cfg.getRedConstraintsFilepath()));
 
+        // Generate excludes constraints
         generateRedConstraintsForAlternative(featureModel, writer);
+        // Generate requires constraints
         generateRedConstraintsForRequires(featureModel, writer);
     }
 
     /**
+     * Generate excludes constraints between child features of alternative relationships
+     *
+     * Format of the generated constraints (FeatureIDE format):
      * <rule>
      * 		<disj>
      * 			<not>
@@ -117,11 +123,13 @@ public class RedConstraintsGenerator {
     private void generateRedConstraintsForAlternative(FeatureModel featureModel, BufferedWriter writer) {
         AtomicInteger count = new AtomicInteger();
 
+        // for each alternative relationship
         featureModel.getRelationships().forEach(relationship -> {
             if (relationship.getType().equals(RelationshipType.ALTERNATIVE)) {
 
                 List<Feature> subFeatures = ((BasicRelationship)relationship).getRightSide();
 
+                // for each pair of child features of the alternative relationship
                 for (int i = 0; i < subFeatures.size() - 1; i++) {
                     for (int j = i + 1; j < subFeatures.size(); j++) {
                         String child1 = subFeatures.get(i).getName();
@@ -155,6 +163,9 @@ public class RedConstraintsGenerator {
     }
 
     /**
+     * Generate requires constraints from an optional feature to a mandatory feature
+     *
+     * Format of the generated constraints (FeatureIDE format):
      * <rule>
      * 		<disj>
      * 		    <var>PREEMPT</var>
@@ -169,9 +180,11 @@ public class RedConstraintsGenerator {
         List<Feature> features = featureModel.getBfFeatures();
 
         for (Feature feature : features) {
+            // all relationships which the feature participates in
             List<Relationship> relationships = featureModel.getRelationshipsWith(feature).stream()
-                    .filter(r -> r.presentAtLeftSide(feature) || r.presentAtRightSide(feature)).toList(); // relationships with feature at the left side
+                    .filter(r -> r.presentAtLeftSide(feature) || r.presentAtRightSide(feature)).toList();
 
+            // get all sub features of the feature
             List<Feature> subFeatures = new LinkedList<>();
             for (Relationship relationship : relationships) {
                 if (relationship.presentAtLeftSide(feature)) {
@@ -181,17 +194,18 @@ public class RedConstraintsGenerator {
                 }
             }
 
+            // for each pair of sub features
             for (int i = 0; i < subFeatures.size(); i++) {
                 Feature f1 = subFeatures.get(i);
 
-                if (featureModel.isOptionalFeature(f1)) {
+                if (featureModel.isOptionalFeature(f1)) { // if the first sub feature is optional
 
                     for (int j = 0; j < subFeatures.size(); j++) {
                         if (i == j) continue;
 
                         Feature f2 = subFeatures.get(j);
 
-                        if (featureModel.isMandatoryFeature(f2)) {
+                        if (featureModel.isMandatoryFeature(f2)) { // if the second sub feature is mandatory
 
                             System.out.println(++count);
 

@@ -72,6 +72,7 @@ public class TestSuiteGenerator {
         String programTitle = "Test Suite Generator";
         String usage = "Usage: java -jar ts_gen.jar [options]]";
 
+        // Parse command line arguments
         CmdLineOptions cmdLineOptions = new CmdLineOptions(null, programTitle, null, usage);
         cmdLineOptions.parseArgument(args);
 
@@ -301,14 +302,14 @@ public class TestSuiteGenerator {
         // create false mandatory test cases
         Feature root = featureModel.getFeature(0);
         featureModel.getBfFeatures().parallelStream()
-                .filter(f -> !f.equals(root) && featureModel.isMandatoryFeature(f)) // check whether the feature is optional
+                .filter(f -> !f.equals(root) && featureModel.isMandatoryFeature(f)) // check whether the feature is mandatory
                 .map(feature -> "~" + feature.getName()) // add {f_opt = false}
                 .filter(testcase -> !testsuite.contains(testcase))
                 .forEachOrdered(testsuite::add);
         /*for (int i = 1; i < featureModel.getNumOfFeatures(); i++) {
             Feature feature = featureModel.getFeature(i);
 
-            // check whether the feature is optional
+            // check whether the feature is mandatory
             if (featureModel.isMandatoryFeature(feature)) {
                 String testcase = "~" + feature.getName();
 

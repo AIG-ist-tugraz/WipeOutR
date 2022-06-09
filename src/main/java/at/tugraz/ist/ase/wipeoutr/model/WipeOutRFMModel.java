@@ -24,14 +24,16 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Manages/Prepares the inputs (constraints/test cases) for the WipeOutR_FM algorithm.
+ *
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
 @Slf4j
-public class FMWipeOutFMModel extends CDRModel implements IChocoModel {
+public class WipeOutRFMModel extends CDRModel implements IChocoModel {
 
     @Getter
-    private Model model;
-    private FMKB fmkb;
+    private Model model; // Choco model
+    private FMKB fmkb; // store the feature model knowledge base (variables, domains, constraints)
 
     private final FeatureModel fm;
 
@@ -42,18 +44,16 @@ public class FMWipeOutFMModel extends CDRModel implements IChocoModel {
      *
      * @param fm a {@link FeatureModel}
      */
-    public FMWipeOutFMModel(FeatureModel fm) {
+    public WipeOutRFMModel(FeatureModel fm) {
         super(fm.getName());
 
         this.fm = fm;
-        this.fmkb = new FMKB(fm, true);
+        this.fmkb = new FMKB(fm, true); // translate the feature model into variables and constraints
         this.model = fmkb.getModelKB();
     }
 
     /**
-     * This function creates a Choco models, variables, constraints
-     * for a corresponding feature models. Besides, test cases are
-     * also translated to Choco constraints.
+     * This function adds constraints to the set of possibly faulty constraints (C).
      */
     @Override
     public void initialize() {
@@ -66,9 +66,9 @@ public class FMWipeOutFMModel extends CDRModel implements IChocoModel {
         Collections.reverse(C);
         this.setPossiblyFaultyConstraints(C);
 
-        // don't need the root constraint since WipeOutR_FM only checks isconsistent(CF - c1 U ~t1)
+        // doesn't need the root constraint since WipeOutR_FM only checks isconsistent(CF - c1 U ~t1)
 
-        // remove all Choco constraints
+        // removes all Choco constraints
         model.unpost(model.getCstrs());
 
         LoggerUtils.outdent();
@@ -76,7 +76,7 @@ public class FMWipeOutFMModel extends CDRModel implements IChocoModel {
     }
 
     public Object clone() throws CloneNotSupportedException {
-        FMWipeOutFMModel clone = (FMWipeOutFMModel) super.clone();
+        WipeOutRFMModel clone = (WipeOutRFMModel) super.clone();
 
         clone.fmkb = new FMKB(fm, true);
         clone.model = clone.fmkb.getModelKB();

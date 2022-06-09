@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * A class to manage the input configuration of the application.
+ * A class to manage the input configuration of WipeOutR applications.
  *
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */

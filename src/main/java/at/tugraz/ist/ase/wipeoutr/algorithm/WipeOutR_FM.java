@@ -61,17 +61,18 @@ public class WipeOutR_FM {
         log.debug("{}Detecting redundancies for [CF={}] >>>", LoggerUtils.tab(), CF);
         LoggerUtils.indent();
 
-        List<Constraint> CF_alpha = new LinkedList<>(CF);
+        List<Constraint> CF_alpha = new LinkedList<>(CF); // CFΔ = CF
 
         start(TIMER_WIPEOUTR_FM);
-        for (Constraint cstr : CF) {
+        for (Constraint cstr : CF) { // for all cα ∈ CF do
 
             log.trace("{}Checking redundancy of [cstr={}]", LoggerUtils.tab(), cstr);
             LoggerUtils.indent();
 
             incrementCounter(COUNTER_CONSISTENCY_CHECKS);
+            // if inconsistent(CFΔ - {cα} ∪ {¬cα}) then
             if (!checker.isConsistent(CF_alpha, cstr)) {
-                CF_alpha.remove(cstr);
+                CF_alpha.remove(cstr); // CFΔ ← CFΔ − {cα}
 
                 log.trace("{}Redundancy detected: [cstr={}]", LoggerUtils.tab(), cstr);
             }
@@ -83,6 +84,6 @@ public class WipeOutR_FM {
         LoggerUtils.outdent();
         log.debug("{}<<< Return non-redundant feature model [CF_alpha={}]", LoggerUtils.tab(), CF_alpha);
 
-        return CF_alpha;
+        return CF_alpha; // return(CFΔ)
     }
 }

@@ -127,7 +127,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        at.tugraz.ist.ase.wipeoutr.app.eval.WipeOutTEvaluationV2
+                                        at.tugraz.ist.ase.wipeoutr.app.eval.WipeOutRTEvaluationV2
                                     </mainClass>
                                 </manifest>
                             </archive>
@@ -167,7 +167,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        at.tugraz.ist.ase.wipeoutr.app.eval.WipeOutFMEvaluationV2
+                                        at.tugraz.ist.ase.wipeoutr.app.eval.WipeOutRFMEvaluationV2
                                     </mainClass>
                                 </manifest>
                             </archive>

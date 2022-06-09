@@ -24,7 +24,7 @@ import java.util.List;
 
 import static at.tugraz.ist.ase.eval.PerformanceEvaluator.*;
 import static at.tugraz.ist.ase.wipeoutr.app.cli.ConfigManager.defaultConfigFile_SolverRuntimeEvaluation;
-import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutEvaluation.TIMER_SOLUTION;
+import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutREvaluation.TIMER_SOLUTION;
 
 /**
  * An evaluation for solver runtime to find a configuration for a given feature model.
@@ -48,6 +48,7 @@ public class SolverRuntimeEvaluation {
         String programTitle = "Solver Runtime Evaluation - Feature Model";
         String usage = "Usage: java -jar solver_runtime.jar [options]]";
 
+        // Parse command line arguments
         CmdLineOptions cmdLineOptions = new CmdLineOptions(null, programTitle, null, usage);
         cmdLineOptions.parseArgument(args);
 

@@ -22,7 +22,7 @@ import at.tugraz.ist.ase.test.builder.fm.FMTestCaseBuilder;
 import at.tugraz.ist.ase.wipeoutr.algorithm.WipeOutR_T;
 import at.tugraz.ist.ase.wipeoutr.app.cli.CmdLineOptions;
 import at.tugraz.ist.ase.wipeoutr.app.cli.ConfigManager;
-import at.tugraz.ist.ase.wipeoutr.model.FMWipeOutTModel;
+import at.tugraz.ist.ase.wipeoutr.model.WipeOutRTModel;
 import lombok.Cleanup;
 
 import java.io.*;
@@ -52,13 +52,14 @@ import static at.tugraz.ist.ase.wipeoutr.app.cli.ConfigManager.defaultConfigFile
  *
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
-public class WipeOutTEvaluationV2 {
+public class WipeOutRTEvaluationV2 {
 
     public static void main(String[] args) throws IOException, FeatureModelParserException {
 
         String programTitle = "WipeOutR_T Evaluation - Feature Model";
         String usage = "Usage: java -jar wipeoutr_t.jar [options]]";
 
+        // Parse command line arguments
         CmdLineOptions cmdLineOptions = new CmdLineOptions(null, programTitle, null, usage);
         cmdLineOptions.parseArgument(args);
 
@@ -113,7 +114,7 @@ public class WipeOutTEvaluationV2 {
                     TestSuite testSuite = factory.buildTestSuite(is, testCaseFactory);
                     int total = testSuite.size();
                     // WipeOutTModel
-                    FMWipeOutTModel testCaseModel = new FMWipeOutTModel(featureModel, testSuite);
+                    WipeOutRTModel testCaseModel = new WipeOutRTModel(featureModel, testSuite);
                     testCaseModel.initialize();
 
                     // Checker
