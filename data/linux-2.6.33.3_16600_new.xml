@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--
-  ~ WipeOut: Automated Redundancy Detection in Feature Models
-  ~
-  ~ Copyright (c) 2022-2022
-  ~
-  ~ @author: Viet-Man Le (vietman.le@ist.tugraz.at)
-  -->
-
 <featureModel>
 	<struct>
 		<and mandatory="true" name="root">
