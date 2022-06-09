@@ -8,6 +8,16 @@ The research community can exploit this repository to reproduce the work describ
 WipeOutR is an algorithmic approach to support the automated identification of redundancies in feature models (FM) and FM test suites.
 This approach has the potential to significantly improve the quality of feature model development and configuration.
 
+## Table of Contents
+
+- [Repository structure](#repository-structure)
+- [Evaluation process](#evaluation-process)
+- [How to reproduce the experiment](#how-to-reproduce-the-experiment)
+  - [Use a CodeOcean capsule](#use-a-codeocean-capsule)
+  - [Use the standalone Java applications](#use-the-standalone-java-applications)
+  - [Get your own copy to run offline](#get-your-own-copy-to-run-offline)
+- [Use the code source for your project](#use-the-code-source-for-your-project)
+
 ## Repository structure
 
 | *folder*         | *description*                                                                 |
@@ -58,20 +68,31 @@ In our paper, the input of this final step is 18 feature models and 378 selected
 The output is a table in which each entry represents the average diagnosis computing time derived from 3 repetitions
 (see Table III in [1]).
 
-## Implementation
+[//]: # (## Implementation)
 
-This software package supports the evaluation process via **six** sub-programs which
-can be triggered by command line arguments.
+[//]: # ()
+[//]: # (This software package supports the evaluation process via **six** sub-programs which)
 
-| *arguments* | *description* |
-| ----------- | ----------- |
-| ```-g``` | feature models generation |
-| ```-st``` | feature model statistics |
-| ```-ts``` | test suite generation |
-| ```-tc``` | test cases classification |
-| ```-ss``` | scenarios selection |
-| ```-e``` | DirectDebug evaluation |
-| ```-h``` | help |
+[//]: # (can be triggered by command line arguments.)
+
+[//]: # ()
+[//]: # (| *arguments* | *description* |)
+
+[//]: # (| ----------- | ----------- |)
+
+[//]: # (| ```-g``` | feature models generation |)
+
+[//]: # (| ```-st``` | feature model statistics |)
+
+[//]: # (| ```-ts``` | test suite generation |)
+
+[//]: # (| ```-tc``` | test cases classification |)
+
+[//]: # (| ```-ss``` | scenarios selection |)
+
+[//]: # (| ```-e``` | DirectDebug evaluation |)
+
+[//]: # (| ```-h``` | help |)
 
 ## How to reproduce the experiment
 
