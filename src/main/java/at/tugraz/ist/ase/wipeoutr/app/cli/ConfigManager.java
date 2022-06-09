@@ -119,7 +119,7 @@ public final class ConfigManager {
 
     public String getFilepathToTestcaseRuntimeEvaluation() {
         File scenariosFolder = new File(scenarioPath);
-        return outputPath + "runtime_" + nameKB + "_" + scenariosFolder.getName() + ".txt";
+        return outputPath + "ts_runtime_" + nameKB + "_" + scenariosFolder.getName() + ".txt";
     }
 
     public String getScenariosPathInResults() {
