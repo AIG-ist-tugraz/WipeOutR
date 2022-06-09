@@ -27,6 +27,8 @@ import org.chocosolver.solver.constraints.nary.cnf.LogOp;
 import org.chocosolver.solver.variables.BoolVar;
 
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 import static at.tugraz.ist.ase.common.ChocoSolverUtils.getVariable;
@@ -78,11 +80,11 @@ public class WipeOutRTModel extends CDRModel implements IChocoModel, IDebuggingM
         log.debug("{}Initializing FMWipeOutTModel for {} >>>", LoggerUtils.tab(), getName());
         LoggerUtils.indent();
 
-        // doesn't need sets possibly faulty constraints to super class
-//        log.trace("{}Adding possibly faulty constraints", LoggerUtils.tab());
-//        List<at.tugraz.ist.ase.kb.core.Constraint> C = new LinkedList<>(fmkb.getConstraintList());
-////        Collections.reverse(C);
-//        this.setPossiblyFaultyConstraints(C);
+        // sets possibly faulty constraints to super class
+        log.trace("{}Adding possibly faulty constraints", LoggerUtils.tab());
+        List<at.tugraz.ist.ase.kb.core.Constraint> C = new LinkedList<>(fmkb.getConstraintList());
+//        Collections.reverse(C);
+        this.setPossiblyFaultyConstraints(C);
 
         // doesn't need the root constraint since WipeOutR_T only checks isconsistent(t1 & ~t2)
 
