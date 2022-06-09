@@ -8,21 +8,43 @@ The research community can exploit this repository to reproduce the work describ
 WipeOutR is an algorithmic approach to support the automated identification of redundancies in feature models (FM) and FM test suites.
 This approach has the potential to significantly improve the quality of feature model development and configuration.
 
+## Repository structure
+
+| *folder*         | *description*                                                                 |
+|------------------|-------------------------------------------------------------------------------|
+| ./conf           | has all configuration files used in the evaluation of the WipeOutR algorithms |
+| ./data           | stores linux-2.6.33.3 feature models, a test suite, and scenarios             |
+| ./data/testsuite | stores a test suite of the original linux-2.6.33.3 feature model              |
+| ./data/scenarios | contains scenarios selected to evaluate the WipeOutR_T algorithm              |
+| ./results        | where results will be stored                                                  |
+| ./src            | source code                                                                   |
+| *.sh             | bash scripts to execute the evaluations                                       |
+
 ## Evaluation process
 
 We have evaluated the WipeOutR algorithms using the *Linux-2.6.33.3* feature model taken from [Diverso Lab's benchmark](https://github.com/diverso-lab/benchmarking) [2].
 To ensure the reproducibility of the results, we have used the seed value of *141982L* for the random number generator.
-The evaluation process consists of the following five steps:
+The folder *./conf* stores all configuration files used in this evaluation.
+The evaluation process consists of the following **five** steps:
 
 ### Step 1 - Test suite generation
 
 We generated a test suite for the feature model.
-Each test suite consists of 5 types of test cases: dead features, false optional, full mandatory, false mandatory, and partial configuration.
-The folder *./data/testsuite* stores the test suite.
+The test suite consists of 5 types of test cases: dead features, false optional, full mandatory, false mandatory, and partial configuration.
+The folder *./data/testsuite* stores the test suite file.
+
+> **Test suite file structure**
+> 
+> A test suite file contains 6 header lines, presenting total number of test cases, number of dead features test cases,
+number of false optional test cases, number of full mandatory test cases, number of false mandatory test cases,
+and number of partial configuration test cases. After the header, each line represents a test case.
+
+A *jar* file executing this step is available from the latest release. For further details, please refer to the [ts_gen.jar guideline]().
 
 ### Step 2 - Scenario selection
 
-We select test-case scenarios where the ratio of violated test cases to non-violated test cases is a specific number predetermined by the user.
+We select randomly test-case scenarios where the ratio of violated test cases to non-violated test cases 
+is a specific number predetermined by the user.
 The number of scenarios is selected depending on the combination of the number of constraints |CF| and the number of test cases |Tπ|.
 For each combination, the average run-time will be calculated (in Step 5) when a specific number of iterations |iter| is reached.
 
@@ -92,7 +114,7 @@ $ ./run.sh
 #### Get the Maven dependencies from GitHub package repository
 
 Some part of our implementation depends on [CA-CDR library](https://github.com/manleviet/CA-CDR-V2). Thus, after cloning the source code into your system,
-you need to add the below script in the *settings.xml* file:
+you need to add the below script in the *settings.xml* file to download the dependencies from GitHub package repository.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
