@@ -1,6 +1,6 @@
 <component name="CopyrightManager">
   <copyright>
-    <option name="notice" value="WipeOutR: Automated Redundancy Detection for Feature Models&#10;&#10;Copyright (c) &amp;#36;originalComment.match(&quot;Copyright \(c\) (\d+)&quot;, 1, &quot;-&quot;)&amp;#36;today.year AIG team, Institute for Software Technology,&#10;Graz University of Technology, Austria&#10; &#10; Contact: http://ase.ist.tugraz.at/ASE/" />
+    <option name="notice" value="WipeOutR: Automated Redundancy Detection for Feature Models&#10;&#10;Copyright (c) &amp;#36;originalComment.match(&quot;Copyright \(c\) (\d+)&quot;, 1, &quot;-&quot;)&amp;#36;today.year AIG team, Institute for Software Technology,&#10;Graz University of Technology, Austria&#10; &#10;Contact: http://ase.ist.tugraz.at/ASE/" />
     <option name="myName" value="wipeoutr" />
   </copyright>
 </component>

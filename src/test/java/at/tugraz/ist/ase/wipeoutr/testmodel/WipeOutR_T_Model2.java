@@ -1,9 +1,10 @@
 /*
- * WipeOut: Automated Redundancy Detection in Feature Models
+ * WipeOutR: Automated Redundancy Detection for Feature Models
  *
- * Copyright (c) 2021-2022
+ * Copyright (c) 2021-2022 AIG team, Institute for Software Technology,
+ * Graz University of Technology, Austria
  *
- * @author: Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Contact: http://ase.ist.tugraz.at/ASE/
  */
 
 package at.tugraz.ist.ase.wipeoutr.testmodel;
@@ -31,6 +32,9 @@ import java.util.*;
 
 import static at.tugraz.ist.ase.csp2choco.CSP2ChocoTranslator.loadConstraints;
 
+/**
+ * @author Viet-Man Le (vietman.le@ist.tugraz.at)
+ */
 @Slf4j
 public class WipeOutR_T_Model2 extends CDRModel implements IChocoModel, IDebuggingModel, ITestCaseRedundancyDetectable {
 

@@ -1,9 +1,10 @@
 /*
- * WipeOut: Automated Redundancy Detection in Feature Models
+ * WipeOutR: Automated Redundancy Detection for Feature Models
  *
- * Copyright (c) 2021-2022
+ * Copyright (c) 2021-2022 AIG team, Institute for Software Technology,
+ * Graz University of Technology, Austria
  *
- * @author: Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Contact: http://ase.ist.tugraz.at/ASE/
  */
 
 package at.tugraz.ist.ase.wipeoutr.app.eval;
@@ -43,6 +44,8 @@ import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutEvaluation.*;
  * Outputs two files:
  * - one file contains all redundancy-free constraints and Choco constraints
  * - another file contains the evaluation results
+ *
+ * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
 public class WipeOutFMEvaluationV2 {
 

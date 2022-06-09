@@ -1,9 +1,10 @@
 /*
- * WipeOut: Automated Redundancy Detection in Feature Models
+ * WipeOutR: Automated Redundancy Detection for Feature Models
  *
- * Copyright (c) 2021-2022
+ * Copyright (c) 2021-2022 AIG team, Institute for Software Technology,
+ * Graz University of Technology, Austria
  *
- * @author: Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Contact: http://ase.ist.tugraz.at/ASE/
  */
 
 package at.tugraz.ist.ase.wipeoutr.app.data;
@@ -53,6 +54,8 @@ import static java.util.concurrent.ForkJoinTask.invokeAll;
  * randomlySearch - randomly select combinations from a list of combinations
  * maxFeaturesInTestCase - maximum number of features in a test case
  *                         e.g. if maxFeaturesInTestCase = 4, then the program will generate test cases with 2, 3, 4 features
+ *
+ * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
 public class TestSuiteGenerator {
     private static FeatureModel featureModel = null;

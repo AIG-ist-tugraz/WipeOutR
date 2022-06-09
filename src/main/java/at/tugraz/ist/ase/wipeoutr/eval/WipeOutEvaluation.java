@@ -1,15 +1,19 @@
 /*
- * WipeOut: Automated Redundancy Detection in Feature Models
+ * WipeOutR: Automated Redundancy Detection for Feature Models
  *
- * Copyright (c) 2022-2022
+ * Copyright (c) 2022-2022 AIG team, Institute for Software Technology,
+ * Graz University of Technology, Austria
  *
- * @author: Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Contact: http://ase.ist.tugraz.at/ASE/
  */
 
 package at.tugraz.ist.ase.wipeoutr.eval;
 
 import at.tugraz.ist.ase.cacdr.eval.CAEvaluator;
 
+/**
+ * @author Viet-Man Le (vietman.le@ist.tugraz.at)
+ */
 public class WipeOutEvaluation extends CAEvaluator {
 
     public static final String TIMER_RUNNING = "Running time:";

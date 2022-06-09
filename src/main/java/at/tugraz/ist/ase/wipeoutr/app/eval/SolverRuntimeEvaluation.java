@@ -1,9 +1,10 @@
 /*
- * WipeOut: Automated Redundancy Detection in Feature Models
+ * WipeOutR: Automated Redundancy Detection for Feature Models
  *
- * Copyright (c) 2022-2022
+ * Copyright (c) 2022-2022 AIG team, Institute for Software Technology,
+ * Graz University of Technology, Austria
  *
- * @author: Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Contact: http://ase.ist.tugraz.at/ASE/
  */
 
 package at.tugraz.ist.ase.wipeoutr.app.eval;
@@ -38,6 +39,8 @@ import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutEvaluation.TIMER_SOLUTION;
  *                              from a file with the same name as the knowledge base, but with the suffix "_nonred",
  *                              stored in the data folder.
  * numIter - number of iterations
+ *
+ * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
 public class SolverRuntimeEvaluation {
 

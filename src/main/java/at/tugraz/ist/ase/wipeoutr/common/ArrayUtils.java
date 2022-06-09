@@ -1,15 +1,21 @@
 /*
- * WipeOut: Automated Redundancy Detection in Feature Models
+ * WipeOutR: Automated Redundancy Detection for Feature Models
  *
- * Copyright (c) 2022-2022
+ * Copyright (c) 2022-2022 AIG team, Institute for Software Technology,
+ * Graz University of Technology, Austria
  *
- * @author: Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Contact: http://ase.ist.tugraz.at/ASE/
  */
 
 package at.tugraz.ist.ase.wipeoutr.common;
 
 import lombok.experimental.UtilityClass;
 
+/**
+ * Some utility methods for array manipulation.
+ *
+ * @author Viet-Man Le (vietman.le@ist.tugraz.at)
+ */
 @UtilityClass
 public class ArrayUtils {
     /**

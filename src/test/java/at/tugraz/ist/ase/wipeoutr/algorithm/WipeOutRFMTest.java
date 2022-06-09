@@ -1,9 +1,10 @@
 /*
- * WipeOut: Automated Redundancy Detection in Feature Models
+ * WipeOutR: Automated Redundancy Detection for Feature Models
  *
- * Copyright (c) 2022-2022
+ * Copyright (c) 2022-2022 AIG team, Institute for Software Technology,
+ * Graz University of Technology, Austria
  *
- * @author: Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Contact: http://ase.ist.tugraz.at/ASE/
  */
 
 package at.tugraz.ist.ase.wipeoutr.algorithm;
@@ -27,6 +28,9 @@ import static at.tugraz.ist.ase.common.ConstraintUtils.convertToString;
 import static at.tugraz.ist.ase.eval.PerformanceEvaluator.reset;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * @author Viet-Man Le (vietman.le@ist.tugraz.at)
+ */
 class WipeOutRFMTest {
     @Test
     void test1() throws IOException {

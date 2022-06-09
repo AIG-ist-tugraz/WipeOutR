@@ -1,9 +1,10 @@
 /*
- * WipeOut: Automated Redundancy Detection in Feature Models
+ * WipeOutR: Automated Redundancy Detection for Feature Models
  *
- * Copyright (c) 2021-2022
+ * Copyright (c) 2021-2022 AIG team, Institute for Software Technology,
+ * Graz University of Technology, Austria
  *
- * @author: Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Contact: http://ase.ist.tugraz.at/ASE/
  */
 
 package at.tugraz.ist.ase.wipeoutr.app.eval;
@@ -43,6 +44,8 @@ import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutEvaluation.*;
  * This program measures the runtime of test suites' execution.
  * You can put as many test suites as you want in the scenarioPath folder.
  * The result is an average runtime.
+ *
+ * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
 public class RuntimeForTestcasesV2 {
 
