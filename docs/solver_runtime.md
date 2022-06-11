@@ -1,9 +1,9 @@
-# ts_gen.jar
+# ts_select.jar
 
-**ts_gen.jar** is a standalone Java application that generates a test suite for a given feature model.
+**ts_select.jar** is a standalone Java application that generates a test suite for a given feature model.
 The test suite consists of five types of test cases: dead features, false optional, full mandatory, false mandatory, and partial configuration.
 
-### Supported feature models
+### Supports the following knowledge bases
 
 1. [SPLOT feature models](splot-research.org). The file extension could be “.sxfm” or “.splx.”
 2. [FeatureIDE format](https://featureide.github.io). The file extension should be “xml.”
@@ -39,6 +39,6 @@ For examples on configuring these parameters, we refer to configuration files in
 
 ## Test suite file structure
 
-A test suite file, which has "testsuite" as its file name extension, contains 6 header lines, presenting total number of test cases, number of dead features test cases,
+A test suite file contains 6 header lines, presenting total number of test cases, number of dead features test cases,
 number of false optional test cases, number of full mandatory test cases, number of false mandatory test cases,
 and number of partial configuration test cases. After the header, each line represents a test case.
