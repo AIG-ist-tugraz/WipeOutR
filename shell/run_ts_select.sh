@@ -1,15 +1,15 @@
 #
 # WipeOutR: Automated Redundancy Detection for Feature Models
 #
-# Copyright (c) 2022 AIG team, Institute for Software Technology,
+# Copyright (c) 2022-2022 AIG team, Institute for Software Technology,
 # Graz University of Technology, Austria
 #
 # Contact: http://ase.ist.tugraz.at/ASE/
 #
 
-echo "Test suite generation"
+echo "Scenarios selection"
 echo ""
 
-java -jar target/ts_gen-jar-with-dependencies.jar -cfg ./conf/ts_gen.cfg
+java -jar ../app/ts_select.jar -cfg ../conf/ts_select.cfg
 
 echo "DONE"
