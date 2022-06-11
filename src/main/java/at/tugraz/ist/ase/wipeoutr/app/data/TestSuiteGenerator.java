@@ -70,7 +70,7 @@ public class TestSuiteGenerator {
 
     public static void main(String[] args) throws IOException, FeatureModelException, FeatureModelParserException {
         String programTitle = "Test Suite Generator";
-        String usage = "Usage: java -jar ts_gen.jar [options]]";
+        String usage = "Usage: java -jar ts_gen.jar [options]";
 
         // Parse command line arguments
         CmdLineOptions cmdLineOptions = new CmdLineOptions(null, programTitle, null, usage);
