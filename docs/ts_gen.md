@@ -1,7 +1,7 @@
 # ts_gen.jar
 
 **ts_gen.jar** is a standalone Java application that generates a test suite for a given feature model.
-The test suite consists of five types of test cases: dead features, false optional, full mandatory, false mandatory, and partial configuration.
+The test suite consists of five types of test cases: dead features, false optional, full mandatory, false mandatory, and partial configuration. Each partial configuration refers to 2-5 randomly features.
 
 ### Supported feature models
 
