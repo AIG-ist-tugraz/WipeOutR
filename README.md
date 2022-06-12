@@ -6,7 +6,7 @@ This approach has the potential to significantly improve the quality of feature 
 This repository shows the implementation and the evaluation of the **WipeOutR** algorithms,
 which will be presented at the SPLC 2022 in the paper entitled
 *WipeOutR: Automated Redundancy Detection for Feature Models*.
-The research community can exploit this repository to reproduce the work described in our paper fully.
+The research community can fully exploit this repository to reproduce the work described in our paper.
 
 ## Table of Contents
 
@@ -15,20 +15,20 @@ The research community can exploit this repository to reproduce the work describ
 - [How to reproduce the experiment](#how-to-reproduce-the-experiment)
   - [Use a CodeOcean capsule](#use-a-codeocean-capsule)
   - [Use the standalone Java applications](#use-the-standalone-java-applications)
-  - [Get your own copy to run offline](#get-your-own-copy-to-run-offline)
-- [Use the code source for your project](#use-the-code-source-for-your-project)
+  - [Get your own copy to run offline](#get-your-copy-to-run-offline)
 
 ## Repository structure
 
-| *folder*         | *description*                                                                      |
-|------------------|------------------------------------------------------------------------------------|
+| *folder*         | *description*                                                                          |
+|------------------|----------------------------------------------------------------------------------------|
 | ./conf           | contains all configuration files used in the evaluation of the **WipeOutR** algorithms |
-| ./data           | stores *Linux-2.6.33.3* feature models, a test suite, and scenarios                |
-| ./data/testsuite | stores a test suite of the original *Linux-2.6.33.3* feature model                 |
+| ./data           | stores *Linux-2.6.33.3* feature models, a test suite, and scenarios                    |
+| ./data/testsuite | stores a test suite of the original *Linux-2.6.33.3* feature model                     |
 | ./data/scenarios | contains scenarios selected to evaluate the **WipeOutR_T** algorithm                   |
-| ./results        | where results will be stored                                                       |
-| ./src            | source code                                                                        |
-| *.sh             | bash scripts to execute the evaluations                                            |
+| ./docs           | guides of *jar* files                                                                  |
+| ./results        | where results will be stored                                                           |
+| ./src            | source code                                                                            |
+| ./shell          | bash scripts to execute the evaluations                                                |
 
 ## Evaluation process
 
@@ -40,7 +40,7 @@ The folder *./conf* stores all configuration files used in the evaluations.
 ### WipeOutR_T evaluation
 
 To the **WipeOutR_T** algorithm, we analyzed different degrees of additionally induced redundancy with regard to the impact
-on (1) runtime of WipeOutR_R and (2) test case execution. In particular, the evaluation results are shown as the following:
+on (1) run-time of WipeOutR_R and (2) test case execution. In particular, the evaluation results are shown as the following:
 
 *Table 5: Avg. runtime (sec) of **WipeOutR_T** in test set (T) evaluated on an Intel Core i7 (6 cores) 2.60GHz (16GB of RAM).*
 
@@ -76,9 +76,14 @@ The folder *./data/testsuite* stores the test suite file with "testsuite" as its
 
 > **Test suite file structure**
 > 
-> A test suite file contains 6 header lines, presenting total number of test cases, number of dead features test cases,
-number of false optional test cases, number of full mandatory test cases, number of false mandatory test cases,
-and number of partial configuration test cases. After the header, each line represents a test case.
+> A test suite file starts with the six-lines header. Each header line has a number that represents:
+> - 1st line - the total number of test cases,
+> - 2nd line - the number of dead features test cases,
+> - 3rd line - the number of false optional test cases,
+> - 4th line - the number of full mandatory test cases,
+> - 5th line - the number of false mandatory test cases, and
+> - 6th line - the number of partial configuration test cases.
+After the header, each line represents a test case.
 
 [ts_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_gen_v1.0) is a *jar* file executing this step.
 For further details, please refer to the [ts_gen.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_gen.md).
@@ -96,7 +101,7 @@ For further details, please refer to the [ts_select.jar guideline](https://githu
 
 #### Step 3 - WipeOutR_T evaluation
 
-We calculate the average run-time of the **WipeOutR_T** algorithm (after 3 iterations) for 12 scenarios.
+We calculate the average run-time of the **WipeOutR_T** algorithm (after three iterations) for 12 scenarios.
 Evaluation results are filled in *wr_t_runtime* elements of the [Table 5](#wipeoutr_t-evaluation).
 
 [wipeoutr_t.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_t_v1.0) is a *jar* file executing this step.
@@ -133,7 +138,7 @@ The evaluation process for the algorithm **WipeOutR_FM** consists of the followi
 
 #### Step 1 - Redundant constraints generation
 
-We have generated automatically a set of redundant constraints. These constraints belong to one of two following types:
+We have generated a set of redundant constraints automatically. These constraints belong to one of two following types:
 - Excludes constraints between child features of alternative relationships
 - Requires constraints from an optional feature to a mandatory feature
 
@@ -145,14 +150,13 @@ For further details, please refer to the [rc_gen.jar guideline](https://github.c
 
 #### Step 2 - Create two variant feature models with increased redundancy
 
-We added manually 4370 and 16600 generated redundant constraints to the original *Linux-2.6.33.3* feature model to create two variant
-feature models with increased redundancy. The new redundancy ratio of two variants are 50% and 70% respectively 
-in comparison with 34.36% of the original feature model.
+We manually added 4370 and 16600 generated redundant constraints to the original *Linux-2.6.33.3* feature model to create two variant
+feature models with increased redundancy. The new redundancy ratios of the two variants are 50% and 70%, respectively, compared with 34.36% of the original feature model.
 
 #### Step 3 - WipeOutR_FM evaluation
 
-We calculate the average run-time of the **WipeOutR_FM** algorithm (after 3 iterations) for three feature models, i.e., the original
-feature model and two variants with 50% and 70% redundancy ratio.
+We calculate the average run-time of the **WipeOutR_FM** algorithm (after three iterations) for three feature models, i.e., the original
+feature model and two variants with 50% and 70% redundancy ratios.
 Evaluation results are filled in *wr_fm_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation)
 
 [wipeoutr_fm.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_fm_v1.0) is a *jar* file executing this step.
@@ -171,7 +175,7 @@ For further details, please refer to the [solver_runtime.jar guideline](https://
 ### Use a CodeOcean capsule
 
 The easiest way to reproduce the experiment is to use a [CodeOcean](https://codeocean.com) capsule.
-You could find our reproducible evaluation of **WipeOutR** algorithms in [here](https://codeocean.com/capsule/5824065/tree/v1).
+You can find our reproducible evaluation of **WipeOutR** algorithms [here](https://codeocean.com/capsule/5824065/tree/v1).
 
 ### Use the standalone Java applications
 
@@ -179,7 +183,7 @@ You could find our reproducible evaluation of **WipeOutR** algorithms in [here](
 > 
 > If you have not installed Java or the Java version isn't the latest one, 
 > please go to Java's website at https://www.java.com/en/download/ and 
-> click on the Java Download button to download the latest version and then install it.
+> click on the Java Download button to download the latest version and install it.
 
 #### Download the standalone Java applications
 
@@ -218,18 +222,18 @@ To run these bash scripts on your system:
 $ chmod u+x run.sh
 ```
 
-2. Run the script by prefixing it with ```./```:
+2. Run the script by prefixing it with "`./` ":
 
 ```
 $ ./run.sh
 ```
 
-### Get your own copy to run offline
+### Get your copy to run offline
 
-#### Get the Maven dependencies from GitHub package repository
+#### Get the Maven dependencies from the GitHub package repository
 
-Some part of our implementation depends on our [CA-CDR library](https://github.com/manleviet/CA-CDR-V2). Thus, after cloning the source code into your system,
-you need to add the below script in the *settings.xml* file to download the dependencies from GitHub package repository.
+Our implementation depends on our [CA-CDR library](https://github.com/manleviet/CA-CDR-V2). Thus, after cloning the source code into your system,
+you need to add the below script in the *settings.xml* file to download the dependencies from the GitHub package repository.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -275,11 +279,11 @@ After having the source code and the *settings.xml* file, you could compile the 
 ```shell
 $ mvn clean package --settings <path to settings.xml>
 ```
-> If you don't have Maven in your computer, please follow the [Maven guide](https://maven.apache.org/download.cgi) to install it.
+> If you don't have Maven on your computer, please follow the [Maven guide](https://maven.apache.org/download.cgi) to install it.
 
 #### Move *jar* files to the *./app* folder
 
-Use the bash script ```move.sh``` to *jar* files to the *./app* folder.
+Use the bash script "`move.sh` "to *jar* files to the *./app* folder.
 
 Finally, you could execute the evaluations using [bash scripts](#use-bash-scripts).
 
@@ -310,11 +314,11 @@ Finally, you could execute the evaluations using [bash scripts](#use-bash-script
 
 [//]: # (2. [FeatureIDE format]&#40;https://featureide.github.io&#41;. The file extension should be “xml.”)
 
-[//]: # (3. v.control format. The feature model format of the v.control tool. The file extension should be “xmi.”)
+[//]: # (3. v.control format. The feature model format of the v.control tool. The file extension should be "xmi.”)
 
 [//]: # (4. [Glencoe format]&#40;https://glencoe.hochschule-trier.de&#41;. The file extension should be “json.”)
 
-[//]: # (5. [Descriptive format]&#40;https://github.com/manleviet/CA-CDR-V2/blob/main/fm-package/src/test/resources/bamboobike.fm4conf&#41;. Our feature model format. The file extension should be “fm4conf”.)
+[//]: # (5. [Descriptive format]&#40;https://github.com/manleviet/CA-CDR-V2/blob/main/fm-package/src/test/resources/bamboobike.fm4conf&#41;. Our feature model format. The file extension should be "fm4conf".)
 
 [//]: # ()
 [//]: # ()
@@ -330,7 +334,7 @@ Finally, you could execute the evaluations using [bash scripts](#use-bash-script
 [//]: # (### CSP knowledge bases)
 
 [//]: # ()
-[//]: # (You need to encode your knowledge base by inherited the class KB)
+[//]: # (You need to encode your knowledge base by inheriting the class KB)
 
 [//]: # ()
 [//]: # (### WipeOutR_T)
@@ -382,7 +386,7 @@ Finally, you could execute the evaluations using [bash scripts](#use-bash-script
 
 [1] V.M. Le, A. Felfernig, M. Uta, T.N.T. Tran, C. Vidal, WipeOutR: Automated Redundancy Detection for Feature Models, 26th ACM International Systems and Software Product Line Conference (SPLC'22), 2022.
 
-[2] Heradio, R., Fernandez-Amoros, D., Galindo, J.A. et al. Uniform and scalable sampling of highly configurable systems. Empir Software Eng 27, 44 (2022). [https://doi.org/10.1007/s10664-021-10102-5](https://doi.org/10.1007/s10664-021-10102-5)
+[2] Heradio, R., Fernandez-Amoros, D., Galindo, J.A., et al. Uniform and scalable sampling of highly configurable systems. Empir Software Eng 27, 44 (2022). [https://doi.org/10.1007/s10664-021-10102-5](https://doi.org/10.1007/s10664-021-10102-5)
 
-[3] K. Kang, S. Cohen, J. Hess, W. Novak, and A. Peterson, ‘Feature-Oriented Domain Analysis (FODA) Feasibility Study’,
+[3] K. Kang, S. Cohen, J. Hess, W. Novak, and A. Peterson, 'Feature-Oriented Domain Analysis (FODA) Feasibility Study',
 Technical Report CMU/SEI-90-TR-021, Software Engineering Institute, Carnegie Mellon University, Pittsburgh, PA, (1990) [link](https://apps.dtic.mil/sti/pdfs/ADA235785.pdf)
