@@ -25,4 +25,4 @@ The configuration file needs the following parameters:
 | ```hasNonRedundantConstraints``` | **false**       | ```true``` - evaluate redundancy-free model. The program will load non-redundant constraints from a file with the same name as the knowledge base, but with the suffix "_nonred", stored in the *./data* folder. |
 | ```numIter```                    | **3**           | number of iterations                                                                                                                                                                                             |
 
-For examples on configuring these parameters, we refer to configuration files in the folder *./conf*.
+For examples of configuring these parameters, we refer to configuration files in the folder *./conf*.
