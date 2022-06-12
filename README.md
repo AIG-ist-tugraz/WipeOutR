@@ -180,6 +180,11 @@ For further details, please refer to the [solver_runtime.jar guideline](https://
 The easiest way to reproduce the experiment is to use a [CodeOcean](https://codeocean.com) capsule.
 You can find our reproducible evaluation of **WipeOutR** algorithms [here](https://codeocean.com/capsule/5824065/tree/v1).
 
+> Due to CodeOcean only supports Java 1.8, the code source on CodeOcean has the Java target version set to 1.8, and uses 
+> the CA-CDR library version 1.3.8-1, which is a version of the CA-CDR library compatible with Java 1.8.
+> 
+> The code source on this GitHub repository has the Java target version set to 17, and uses the CA-CDR library version 1.3.8.
+
 ### Use the standalone Java applications
 
 > **Install Java**
