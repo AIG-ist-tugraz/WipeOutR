@@ -39,6 +39,12 @@ For examples of configuring these parameters, we refer to configuration files in
 
 ## Test suite file structure
 
-A test suite file, which has "testsuite" as its file name extension, contains 6 header lines, presenting total number of test cases, number of dead features test cases,
-number of false optional test cases, number of full mandatory test cases, number of false mandatory test cases,
-and number of partial configuration test cases. After the header, each line represents a test case.
+A test suite file starts with the six-lines header. Each header line has a number that represents:
+- 1st line - the total number of test cases,
+- 2nd line - the number of dead features test cases,
+- 3rd line - the number of false optional test cases,
+- 4th line - the number of full mandatory test cases,
+- 5th line - the number of false mandatory test cases, and
+- 6th line - the number of partial configuration test cases.
+
+After the header, each line represents a test case.
