@@ -35,7 +35,7 @@ The configuration file needs the following parameters:
 | ```randomlySearch``` | **false**       | randomly select combinations from a list of combinations (used in the generation of partial configuration test cases)                    |
 | ```maxFeaturesInTestCase``` | **5**           | maximum number of features in a test case (used in the generation of partial configuration test cases)                                   |
 
-For examples on configuring these parameters, we refer to configuration files in the folder *./conf*.
+For examples of configuring these parameters, we refer to configuration files in the folder *./conf*.
 
 ## Test suite file structure
 
