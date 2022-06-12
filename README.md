@@ -97,7 +97,7 @@ For further details, please refer to the [ts_select.jar guideline](https://githu
 #### Step 3 - WipeOutR_T evaluation
 
 We calculate the average run-time of the **WipeOutR_T** algorithm (after 3 iterations) for 12 scenarios.
-Evaluation results are filled in *wr_t_runtime* elements of the [Table 5](#wipeoutr_t-evaluation)
+Evaluation results are filled in *wr_t_runtime* elements of the [Table 5](#wipeoutr_t-evaluation).
 
 [wipeoutr_t.jar]() is a *jar* file executing this step.
 For further details, please refer to the [wipeoutr_t.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/wipeoutr_t.md).

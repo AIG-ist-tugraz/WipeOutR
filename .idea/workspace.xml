@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Update README.md and Add move.sh" />
+    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Update README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +52,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.30601093",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Markdown"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -104,7 +107,8 @@
       <option name="presentableId" value="Default" />
       <updated>1654697409724</updated>
       <workItem from="1654697411039" duration="16828000" />
-      <workItem from="1654778784123" duration="41632000" />
+      <workItem from="1654778784123" duration="42874000" />
+      <workItem from="1655027243006" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="First commit - camera-ready-version for SPLC'22">
       <created>1654706580498</created>
@@ -295,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654996189550</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Update README.md">
+      <created>1654996608224</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1654996608224</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +352,6 @@
     <MESSAGE value="Add run.sh for wipeoutr_fm" />
     <MESSAGE value="Add other run.sh" />
     <MESSAGE value="Add linux-2.6.3_50_50_s_nonred.testcases" />
-    <MESSAGE value="Update README.md" />
     <MESSAGE value="Add table of contents to README.md" />
     <MESSAGE value="Add linux-2.6.3_100_90_s_nonred.testcases" />
     <MESSAGE value="Add linux-2.6.3_100_50_s_nonred.testcases" />
@@ -353,7 +363,8 @@
     <MESSAGE value="Add docs" />
     <MESSAGE value="Add shell folder" />
     <MESSAGE value="Update README.md and Add move.sh" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md and Add move.sh" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
