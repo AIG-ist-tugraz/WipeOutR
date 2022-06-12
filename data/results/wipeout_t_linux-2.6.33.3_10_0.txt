@@ -1,0 +1,68 @@
+WipeOutR_T Evaluation - Feature Model
+Configurations:
+	nameKB: linux-2.6.33.3
+	dataPath: ./data/
+	scenarioPath: ./data/scenarios/10/10_0/
+	outputPath: ./results/
+	numIter: 3
+Evaluating WipeOutR_T runtime...
+	========================
+	LINUX-2.6.3_10_0_S.TESTCASES
+	#test cases: 10
+	#new test cases: 10
+	%redundant test cases: 0.0
+	The number of Consistency checks: 90.0
+	Time for running: 53.825092538
+		Non-redundant test cases: 10
+		~WL1251
+		~DVB_USB
+		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+		WM8350_WATCHDOG
+		~DECOMPRESS_LZO & ~SERIAL_8250 & ~VIDEO_STRADIS
+		PCI_MMCONFIG
+		NLS_CODEPAGE_737
+		~ICPLUS_PHY
+		~RTC_DRV_MC13783
+		~SECURITY_SELINUX_POLICYDB_VERSION_MAX_VALUE & ~LOGO_BLACKFIN_CLUT224
+	Done - linux-2.6.3_10_0_s.testcases
+	========================
+	LINUX-2.6.3_10_0_S.TESTCASES
+	#test cases: 10
+	#new test cases: 10
+	%redundant test cases: 0.0
+	The number of Consistency checks: 90.0
+	Time for running: 55.19230642
+		Non-redundant test cases: 10
+		~WL1251
+		~DVB_USB
+		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+		WM8350_WATCHDOG
+		~DECOMPRESS_LZO & ~SERIAL_8250 & ~VIDEO_STRADIS
+		PCI_MMCONFIG
+		NLS_CODEPAGE_737
+		~ICPLUS_PHY
+		~RTC_DRV_MC13783
+		~SECURITY_SELINUX_POLICYDB_VERSION_MAX_VALUE & ~LOGO_BLACKFIN_CLUT224
+	Done - linux-2.6.3_10_0_s.testcases
+	========================
+	LINUX-2.6.3_10_0_S.TESTCASES
+	#test cases: 10
+	#new test cases: 10
+	%redundant test cases: 0.0
+	The number of Consistency checks: 90.0
+	Time for running: 51.747502226
+		Non-redundant test cases: 10
+		~WL1251
+		~DVB_USB
+		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+		WM8350_WATCHDOG
+		~DECOMPRESS_LZO & ~SERIAL_8250 & ~VIDEO_STRADIS
+		PCI_MMCONFIG
+		NLS_CODEPAGE_737
+		~ICPLUS_PHY
+		~RTC_DRV_MC13783
+		~SECURITY_SELINUX_POLICYDB_VERSION_MAX_VALUE & ~LOGO_BLACKFIN_CLUT224
+	Done - linux-2.6.3_10_0_s.testcases
+Average number of Consistency checks: 90.0
+Average time for running: 53.58830039466667 seconds
+DONE

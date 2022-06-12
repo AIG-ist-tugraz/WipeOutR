@@ -1,0 +1,41 @@
+WipeOutR_T Evaluation - Feature Model
+Configurations:
+	nameKB: linux-2.6.33.3
+	dataPath: ./data/
+	scenarioPath: ./data/scenarios/10/10_90/
+	outputPath: ./results/
+	numIter: 3
+Evaluating WipeOutR_T runtime...
+	========================
+	LINUX-2.6.3_10_90_S.TESTCASES
+	#test cases: 10
+	#new test cases: 1
+	%redundant test cases: 90.0
+	The number of Consistency checks: 16.0
+	Time for running: 4.563935919
+		Non-redundant test cases: 1
+		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+	Done - linux-2.6.3_10_90_s.testcases
+	========================
+	LINUX-2.6.3_10_90_S.TESTCASES
+	#test cases: 10
+	#new test cases: 1
+	%redundant test cases: 90.0
+	The number of Consistency checks: 16.0
+	Time for running: 5.360473814
+		Non-redundant test cases: 1
+		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+	Done - linux-2.6.3_10_90_s.testcases
+	========================
+	LINUX-2.6.3_10_90_S.TESTCASES
+	#test cases: 10
+	#new test cases: 1
+	%redundant test cases: 90.0
+	The number of Consistency checks: 16.0
+	Time for running: 4.988439896
+		Non-redundant test cases: 1
+		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+	Done - linux-2.6.3_10_90_s.testcases
+Average number of Consistency checks: 16.0
+Average time for running: 4.970949876333333 seconds
+DONE

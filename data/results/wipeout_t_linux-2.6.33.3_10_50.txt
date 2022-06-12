@@ -1,0 +1,53 @@
+WipeOutR_T Evaluation - Feature Model
+Configurations:
+	nameKB: linux-2.6.33.3
+	dataPath: ./data/
+	scenarioPath: ./data/scenarios/10/10_50/
+	outputPath: ./results/
+	numIter: 3
+Evaluating WipeOutR_T runtime...
+	========================
+	LINUX-2.6.3_10_50_S.TESTCASES
+	#test cases: 10
+	#new test cases: 5
+	%redundant test cases: 50.0
+	The number of Consistency checks: 39.0
+	Time for running: 31.289402544
+		Non-redundant test cases: 5
+		USB_EHCI_TT_NEWSCHED
+		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+		STACKTRACE_SUPPORT & BINFMT_ELF & ~X86_CMPXCHG64 & ~FUSE_FS
+		~IOMMU_STRESS
+		~CYCLADES
+	Done - linux-2.6.3_10_50_s.testcases
+	========================
+	LINUX-2.6.3_10_50_S.TESTCASES
+	#test cases: 10
+	#new test cases: 5
+	%redundant test cases: 50.0
+	The number of Consistency checks: 39.0
+	Time for running: 33.47997018
+		Non-redundant test cases: 5
+		USB_EHCI_TT_NEWSCHED
+		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+		STACKTRACE_SUPPORT & BINFMT_ELF & ~X86_CMPXCHG64 & ~FUSE_FS
+		~IOMMU_STRESS
+		~CYCLADES
+	Done - linux-2.6.3_10_50_s.testcases
+	========================
+	LINUX-2.6.3_10_50_S.TESTCASES
+	#test cases: 10
+	#new test cases: 5
+	%redundant test cases: 50.0
+	The number of Consistency checks: 39.0
+	Time for running: 31.430683638
+		Non-redundant test cases: 5
+		USB_EHCI_TT_NEWSCHED
+		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+		STACKTRACE_SUPPORT & BINFMT_ELF & ~X86_CMPXCHG64 & ~FUSE_FS
+		~IOMMU_STRESS
+		~CYCLADES
+	Done - linux-2.6.3_10_50_s.testcases
+Average number of Consistency checks: 39.0
+Average time for running: 32.066685454 seconds
+DONE

@@ -1,0 +1,53 @@
+WipeOutR_T Evaluation - Feature Model
+Configurations:
+	nameKB: linux-2.6.33.3
+	dataPath: ./data/
+	scenarioPath: ./data/scenarios/50/50_90/
+	outputPath: ./results/
+	numIter: 3
+Evaluating WipeOutR_T runtime...
+	========================
+	LINUX-2.6.3_50_90_S.TESTCASES
+	#test cases: 50
+	#new test cases: 5
+	%redundant test cases: 90.0
+	The number of Consistency checks: 195.0
+	Time for running: 197.891025934
+		Non-redundant test cases: 5
+		~HZ_300_alt & ~INLINE_READ_UNLOCK & ~R3964 & INLINE_READ_TRYLOCK & SCSI_LOWLEVEL
+		~CHR_DEV_SCH & X86_REROUTE_FOR_BROKEN_BOOT_IRQS & HAVE_IOREMAP_PROT & ~BINFMT_EM86
+		~SERIAL_S3C2412 & X86_PLATFORM_DEVICES & ~KGDB & INLINE_SPIN_TRYLOCK & ~BOOT_PRINTK_DELAY
+		~DM_MIRROR
+		SENSORS_IBMPEX
+	Done - linux-2.6.3_50_90_s.testcases
+	========================
+	LINUX-2.6.3_50_90_S.TESTCASES
+	#test cases: 50
+	#new test cases: 5
+	%redundant test cases: 90.0
+	The number of Consistency checks: 195.0
+	Time for running: 187.572669211
+		Non-redundant test cases: 5
+		~HZ_300_alt & ~INLINE_READ_UNLOCK & ~R3964 & INLINE_READ_TRYLOCK & SCSI_LOWLEVEL
+		~CHR_DEV_SCH & X86_REROUTE_FOR_BROKEN_BOOT_IRQS & HAVE_IOREMAP_PROT & ~BINFMT_EM86
+		~SERIAL_S3C2412 & X86_PLATFORM_DEVICES & ~KGDB & INLINE_SPIN_TRYLOCK & ~BOOT_PRINTK_DELAY
+		~DM_MIRROR
+		SENSORS_IBMPEX
+	Done - linux-2.6.3_50_90_s.testcases
+	========================
+	LINUX-2.6.3_50_90_S.TESTCASES
+	#test cases: 50
+	#new test cases: 5
+	%redundant test cases: 90.0
+	The number of Consistency checks: 195.0
+	Time for running: 185.038581382
+		Non-redundant test cases: 5
+		~HZ_300_alt & ~INLINE_READ_UNLOCK & ~R3964 & INLINE_READ_TRYLOCK & SCSI_LOWLEVEL
+		~CHR_DEV_SCH & X86_REROUTE_FOR_BROKEN_BOOT_IRQS & HAVE_IOREMAP_PROT & ~BINFMT_EM86
+		~SERIAL_S3C2412 & X86_PLATFORM_DEVICES & ~KGDB & INLINE_SPIN_TRYLOCK & ~BOOT_PRINTK_DELAY
+		~DM_MIRROR
+		SENSORS_IBMPEX
+	Done - linux-2.6.3_50_90_s.testcases
+Average number of Consistency checks: 195.0
+Average time for running: 190.167425509 seconds
+DONE
