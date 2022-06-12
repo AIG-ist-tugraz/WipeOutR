@@ -17,6 +17,8 @@ three important values:
 - The number of non-redundant test cases selected from *Group A* - ```#Ta = #T / 30 + 1```  
 - The number of non-redundant test cases selected from *Group B* - ```#Tb = #T - #red - #Ta```
 
+> *Why ```#T / 30```?* For a given five-features test case, we can have in the total 30 redundant test cases. 
+
 After knowing these values, the program selects randomly ```#Ta``` and ```#Tb``` test cases from the corresponding group of test cases.
 Next, the program use ```#Ta``` test cases from Group A to generate ```#red``` redundant test cases.
 
