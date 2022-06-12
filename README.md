@@ -233,6 +233,8 @@ $ ./run.sh
 
 ### Get your copy to run offline
 
+> **JDK requirement:** OpenJDK 17.0.2
+
 #### Get the Maven dependencies from the GitHub package repository
 
 Our implementation depends on our [CA-CDR library](https://github.com/manleviet/CA-CDR-V2). Thus, after cloning the source code into your system,
