@@ -29,4 +29,4 @@ The configuration file needs the following parameters:
 | ```dataPath``` | **./data/**     | the folder where the dataset is stored                                                                                                   |
 | ```outputPath``` | **./results/**  | the folder where the results will be saved                                                                                               |
 
-For examples on configuring these parameters, we refer to configuration files in the folder *./conf*.
+For examples of configuring these parameters, we refer to configuration files in the folder *./conf*.
