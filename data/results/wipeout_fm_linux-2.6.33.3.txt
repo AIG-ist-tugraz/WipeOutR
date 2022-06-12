@@ -1,0 +1,31 @@
+WipeOutFM Evaluation - Feature Model
+Configurations:
+	nameKB: linux-2.6.33.3
+	dataPath: ../data/
+	outputPath: ../results/
+	numIter: 3
+	#constraints of the original model: 13972
+	#Choco constraints of the original model: 14651
+	========================
+	#Choco constraints before evaluation: 0
+	#Choco constraints after evaluation: 0
+	#new constraints: 9171
+	Consistency checks: 13972.0
+	Time for solver running: 2324.412951623
+	========================
+	#Choco constraints before evaluation: 0
+	#Choco constraints after evaluation: 0
+	#new constraints: 9171
+	Consistency checks: 13972.0
+	Time for solver running: 1587.349949136
+	========================
+	#Choco constraints before evaluation: 0
+	#Choco constraints after evaluation: 0
+	#new constraints: 9171
+	Consistency checks: 13972.0
+	Time for solver running: 1626.343523065
+WipeOutR_FM evaluation results:	#constraints: 13972
+	#new constraints: 9171
+	%redundant constraints: 34.36158030346407
+	The number of Consistency checks: 13972.0
+	Time for WipeOutFM running: 1846.035474608 seconds

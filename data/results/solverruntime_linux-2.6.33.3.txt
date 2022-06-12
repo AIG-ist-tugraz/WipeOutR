@@ -1,0 +1,18 @@
+Solver Runtime Evaluation - Feature Model
+Configurations:
+	nameKB: linux-2.6.33.3
+	dataPath: ../data/
+	outputPath: ../results/
+	hasNonRedundantConstraints: false
+	numIter: 3
+Evaluating Solver runtime on the original model...
+	#constraints of the original model: 13972
+	#Choco constraints of the original model: 14612
+	========================
+	Time for solver running: 0.666857394
+	========================
+	Time for solver running: 0.77964852
+	========================
+	Time for solver running: 0.754684802
+Solver Runtime Evaluation results:
+	Time for solver on the original model: 0.7337302386666666
