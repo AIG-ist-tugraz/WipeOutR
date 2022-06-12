@@ -27,4 +27,4 @@ The configuration file needs the following parameters:
 | ```scenarioPath```  | **./data/scenario/** | path to the folder, where you store scenarios you want to measure the runtime |
 | ```numIter```       | **3**                | number of iterations                                                            |
 
-For examples on configuring these parameters, we refer to configuration files in the folder *./conf*.
+For examples of configuring these parameters, we refer to configuration files in the folder *./conf*.
