@@ -37,7 +37,7 @@ import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutREvaluation.*;
  * Configurations:
  * nameKB - name/filename of the knowledge base
  * dataPath - path to the data folder, where you store the knowledge base file
- * scenarioPath - path to the folder, where you store test suites you want to measure the runtime
+ * scenarioPath - path to the folder, where you store scenarios you want to measure the runtime
  * outputPath - path to the folder, where you store the results
  * numIter - number of iterations
  *

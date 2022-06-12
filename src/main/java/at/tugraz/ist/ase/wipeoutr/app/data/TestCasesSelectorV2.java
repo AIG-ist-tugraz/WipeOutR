@@ -42,8 +42,8 @@ import static at.tugraz.ist.ase.wipeoutr.app.cli.ConfigManager.defaultConfigFile
  * nameKB - name/filename of the knowledge base
  * dataPath - path to the data folder, where you have a testsuite folder for test suites
  * outputPath - path to the folder, where you store the results
- * cardTC - list of numbers of test cases want to be selected
- * redRatio - list of redundancy ratios
+ * cardTC - list of numbers of test cases want to be selected in scenarios
+ * redRatio - list of redundancy ratios in scenarios
  *
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */

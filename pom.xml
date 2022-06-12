@@ -67,7 +67,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        at.tugraz.ist.ase.wipeoutr.app.testcase.TestSuiteGenerator
+                                        at.tugraz.ist.ase.wipeoutr.app.data.TestSuiteGenerator
                                     </mainClass>
                                 </manifest>
                             </archive>
@@ -87,7 +87,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        at.tugraz.ist.ase.wipeoutr.app.testcase.TestCasesSelectorV2
+                                        at.tugraz.ist.ase.wipeoutr.app.data.TestCasesSelectorV2
                                     </mainClass>
                                 </manifest>
                             </archive>
@@ -107,7 +107,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        at.tugraz.ist.ase.wipeoutr.app.eval.RedConstraintsGenerator
+                                        at.tugraz.ist.ase.wipeoutr.app.data.RedConstraintsGenerator
                                     </mainClass>
                                 </manifest>
                             </archive>

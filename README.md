@@ -1,12 +1,12 @@
 # WipeOutR: Automated Redundancy Detection for Feature Models
 
+WipeOutR is an algorithmic approach to support the automated identification of redundancies in feature models (FM) and FM test suites.
+This approach has the potential to significantly improve the quality of feature model development and configuration.
+
 This repository shows the implementation and the evaluation of the WipeOutR algorithms,
 which will be presented at the SPLC 2022 in the paper entitled
 *WipeOutR: Automated Redundancy Detection for Feature Models*.
 The research community can exploit this repository to reproduce the work described in our paper fully.
-
-WipeOutR is an algorithmic approach to support the automated identification of redundancies in feature models (FM) and FM test suites.
-This approach has the potential to significantly improve the quality of feature model development and configuration.
 
 ## Table of Contents
 
@@ -20,28 +20,59 @@ This approach has the potential to significantly improve the quality of feature 
 
 ## Repository structure
 
-| *folder*         | *description*                                                                 |
-|------------------|-------------------------------------------------------------------------------|
-| ./conf           | has all configuration files used in the evaluation of the WipeOutR algorithms |
-| ./data           | stores linux-2.6.33.3 feature models, a test suite, and scenarios             |
-| ./data/testsuite | stores a test suite of the original linux-2.6.33.3 feature model              |
-| ./data/scenarios | contains scenarios selected to evaluate the WipeOutR_T algorithm              |
-| ./results        | where results will be stored                                                  |
-| ./src            | source code                                                                   |
-| *.sh             | bash scripts to execute the evaluations                                       |
+| *folder*         | *description*                                                                      |
+|------------------|------------------------------------------------------------------------------------|
+| ./conf           | contains all configuration files used in the evaluation of the WipeOutR algorithms |
+| ./data           | stores *Linux-2.6.33.3* feature models, a test suite, and scenarios                |
+| ./data/testsuite | stores a test suite of the original *Linux-2.6.33.3* feature model                 |
+| ./data/scenarios | contains scenarios selected to evaluate the WipeOutR_T algorithm                   |
+| ./results        | where results will be stored                                                       |
+| ./src            | source code                                                                        |
+| *.sh             | bash scripts to execute the evaluations                                            |
 
 ## Evaluation process
 
-We have evaluated the WipeOutR algorithms using the *Linux-2.6.33.3* feature model taken from [Diverso Lab's benchmark](https://github.com/diverso-lab/benchmarking) [2].
-To ensure the reproducibility of the results, we have used the seed value of *141982L* for the random number generator.
-The folder *./conf* stores all configuration files used in this evaluation.
-The evaluation process consists of the following **five** steps:
+We have evaluated the WipeOutR algorithms using the *Linux-2.6.33.3* feature model
+taken from [Diverso Lab's benchmark](https://github.com/diverso-lab/benchmarking) [2].
+To ensure the reproducibility of the results, we have used the seed value of **141982L** for the random number generator.
+The folder *./conf* stores all configuration files used in the evaluations.
 
-### Step 1 - Test suite generation
+### WipeOutR_T evaluation
 
-We generated a test suite for the feature model.
+To the WipeOutR_T algorithm, we analyzed different degrees of additionally induced redundancy with regard to the impact
+on (1) runtime of WipeOutR_R and (2) test case execution. In particular, the evaluation results are shown as the following:
+
+*Table 5: Avg. runtime (sec) of WipeOutR_T in test set (T) evaluated on an Intel Core i7 (6 cores) 2.60GHz (16GB of RAM).*
+
+| #T  | 0% redundancy                                       | 50% redundancy                                      | 90% redundancy                                      |
+|-----|-----------------------------------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| 10  | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* |
+| 50  | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* |
+| 100 | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* |
+| 250 | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* |
+
+> *wr_t_runtime* - WipeOutR_T runtime
+>
+> *ts_runtime* - execution runtime with redundant T
+>
+> *nonred_ts_runtime* - execution runtime with non-redundant T
+
+The evaluation process for the algorithm WipeOutR_T consists of the following **four** steps:
+
+#### Step 1 - Test suite generation
+
+We have generated a test suite for the *Linux-2.6.33.3* feature model.
 The test suite consists of 5 types of test cases: dead features, false optional, full mandatory, false mandatory, and partial configuration.
-The folder *./data/testsuite* stores the test suite file.
+The number of features in the generated partial configuration test cases are 2, 3, 4, and 5.
+The folder *./data/testsuite* stores the test suite file with "testsuite" as its file name extension.
+
+| *type of test cases*  | *number of generated test cases* |
+|-----------------------|----------------------------------|
+| dead feature          | 6.466                            |
+| false optional        | 249                              |
+| full mandatory        | 6222                             |
+| false mandatory       | 244                              |
+| partial configuration | 18.800                           |
 
 > **Test suite file structure**
 > 
@@ -49,74 +80,137 @@ The folder *./data/testsuite* stores the test suite file.
 number of false optional test cases, number of full mandatory test cases, number of false mandatory test cases,
 and number of partial configuration test cases. After the header, each line represents a test case.
 
-A *jar* file executing this step is available from the latest release. For further details, please refer to the [ts_gen.jar guideline]().
+[ts_gen.jar]() is a *jar* file executing this step.
+For further details, please refer to the [ts_gen.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_gen.md).
 
-### Step 2 - Scenario selection
+#### Step 2 - Scenario selection
 
-We select randomly test-case scenarios where the ratio of violated test cases to non-violated test cases 
-is a specific number predetermined by the user.
-The number of scenarios is selected depending on the combination of the number of constraints |CF| and the number of test cases |Tπ|.
-For each combination, the average run-time will be calculated (in Step 5) when a specific number of iterations |iter| is reached.
+Based on the generated test suite in Step 1, we have selected 12 test scenarios with the test set cardinalities of 10, 50, 100, 250, and 
+the redundancy ratios of 0%, 50%, and 90%. Besides, for each selected redundant scenario,
+we used the WipeOutR_T algorithm to obtain its non-redundant scenario, which is used in Step 4 to compare test case executions. 
 
-In our paper, for each selected feature model, we selected 21 scenarios for 7 numbers of test cases. In total, there were 378 (3 feature models x 6 |CF| x 7 |Tπ| x 3 |iter|) selected test-case scenarios. The folder *./data/paper/testcases* stores 378 selected scenarios.
+The folder *./data/scenarios* stores the selected scenarios.
 
-### Step 5 - DirectDebug evaluation
+[ts_select.jar]() is a *jar* file executing this step. 
+For further details, please refer to the [ts_select.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_select.md).
 
-The program calculates the average run-time of DirectDebug.
+#### Step 3 - WipeOutR_T evaluation
 
-In our paper, the input of this final step is 18 feature models and 378 selected scenarios of test cases.
-The output is a table in which each entry represents the average diagnosis computing time derived from 3 repetitions
-(see Table III in [1]).
+We calculate the average run-time of the WipeOutR_T algorithm (after 3 iterations) for 12 scenarios.
+Evaluation results are filled in *wr_t_runtime* elements of the [Table 5](#wipeoutr_t-evaluation)
 
-[//]: # (## Implementation)
+[wipeoutr_t.jar]() is a *jar* file executing this step.
+For further details, please refer to the [wipeoutr_t.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/wipeoutr_t.md).
 
-[//]: # ()
-[//]: # (This software package supports the evaluation process via **six** sub-programs which)
+#### Step 4 - Test case execution evaluation
 
-[//]: # (can be triggered by command line arguments.)
+We measure average test case execution run-times (after 3 iterations) for 12 scenarios 
+in both cases of redundant scenario and non-redundant scenario. Evaluation results are filled in *ts_runtime*/*nonred_ts_runtime* elements of the [Table 5](#wipeoutr_t-evaluation).
 
-[//]: # ()
-[//]: # (| *arguments* | *description* |)
+[ts_runtime.jar]() is a *jar* file executing this step.
+For further details, please refer to the [ts_runtime.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_runtime.md).
 
-[//]: # (| ----------- | ----------- |)
+### WipeOutR_FM evaluation
 
-[//]: # (| ```-g``` | feature models generation |)
+To the WipeOutR_FM algorithm, we analyzed (1) runtime of WipeOutR_FM 
+and (2) solution search on the basis of increased redundancy degrees in CF. Evaluation results are shown as the following:
 
-[//]: # (| ```-st``` | feature model statistics |)
+*Table 6: Avg. runtime (sec) of WipeOutR_FM evaluated on an Intel Core i7 (6 cores) 2.60GHz (16GB of RAM).*
 
-[//]: # (| ```-ts``` | test suite generation |)
+| #CF    | red.%  | runtime         | solv. (red.)  | solv. (non-red)      |
+|--------|--------|-----------------|---------------|----------------------|
+| 13,972 | 34.36% | *wr_fm_runtime* | *sol_runtime* | *nonred_sol_runtime* |
+| 18,342 | 50%    | *wr_fm_runtime* | *sol_runtime* | *nonred_sol_runtime* |
+| 30,572 | 70%    | *wr_fm_runtime* | *sol_runtime* | *nonred_sol_runtime* |
 
-[//]: # (| ```-tc``` | test cases classification |)
+> *wr_fm_runtime* - WipeOutR_FM runtime
+>
+> *sol_runtime* - solution search runtime on the redundant feature model
+>
+> *nonred_sol_runtime* - solution search runtime on the non-redundant feature model
 
-[//]: # (| ```-ss``` | scenarios selection |)
+The evaluation process for the algorithm WipeOutR_FM consists of the following **four** steps:
 
-[//]: # (| ```-e``` | DirectDebug evaluation |)
+#### Step 1 - Redundant constraints generation
 
-[//]: # (| ```-h``` | help |)
+We have generated automatically a set of redundant constraints. These constraints belong to one of two following types:
+- Excludes constraints between child features of alternative relationships
+- Requires constraints from an optional feature to a mandatory feature
+
+For the *Linux-2.6.33.3* feature model, we generated *693* redundant constraints of the first type and *51531* redundant constraints
+of the second type.
+
+[rc_gen.jar]() is a *jar* file executing this step.
+For further details, please refer to the [rc_gen.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/rc_gen.md).
+
+#### Step 2 - Create two variant feature models with increased redundancy
+
+We added manually 4370 and 16600 generated redundant constraints to the original *Linux-2.6.33.3* feature model to create two variant
+feature models with increased redundancy. The new redundancy ratio of two variants are 50% and 70% respectively 
+in comparison with 34.36% of the original feature model.
+
+#### Step 3 - WipeOutR_FM evaluation
+
+We calculate the average run-time of the WipeOutR_FM algorithm (after 3 iterations) for three feature models, i.e., the original
+feature model and two variants with 50% and 70% redundancy ratio.
+Evaluation results are filled in *wr_fm_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation)
+
+[wipeoutr_t.jar]() is a *jar* file executing this step.
+For further details, please refer to the [wipeoutr_t.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/wipeoutr_t.md).
+
+#### Step 4 - Solution search evaluation
+
+We measure average solution search run-times (after 3 iterations) for three feature models
+in both cases of redundant feature models and non-redundant feature models. Evaluation results are filled in *solver_runtime*/*nonred_solver_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation).
+
+[solver_runtime.jar]() is a *jar* file executing this step.
+For further details, please refer to the [solver_runtime.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/solver_runtime.md).
 
 ## How to reproduce the experiment
 
 ### Use a CodeOcean capsule
 
 The easiest way to reproduce the experiment is to use a [CodeOcean](https://codeocean.com) capsule.
-You could find a reproducible evaluation of WipeOutR algorithms in [here](https://codeocean.com/capsule/5824065/tree/v1).
+You could find our reproducible evaluation of WipeOutR algorithms in [here](https://codeocean.com/capsule/5824065/tree/v1).
 
 ### Use the standalone Java applications
 
-We published seven standalone Java applications naming **d2bug_eval.jar** that encapsulates the evaluation steps in one program.
+> **Install Java**
+> 
+> If you have not installed Java or the Java version isn't the latest one, 
+> please go to Java's website at https://www.java.com/en/download/ and 
+> click on the Java Download button to download the latest version and then install it.
 
-**d2bug_eval.jar** is available from the [latest release](https://github.com/AIG-ist-tugraz/DirectDebug/releases/tag/v1.1).
-For further details of this app, we refer to [d2bug_eval.jar guideline](https://github.com/AIG-ist-tugraz/DirectDebug/blob/main/d2bug_eval.jar.md).
+#### Download the standalone Java applications
 
-#### Use a bash script
+| *apps*                 | *description*                            |
+|------------------------|------------------------------------------|
+| [wipeoutr_t.jar]()     | WipeOutR_T evaluation                    |
+| [ts_runtime.jar]()     | Execution runtime of a set of test cases |
+| [wipeoutr_fm.jar]()    | WipeOutR_FM evaluation                   |
+| [solver_runtime.jar]() | Solution search runtime                  |
+| [ts_gen.jar]()         | Test suite generator                     |
+| [ts_select.jar]()      | Scenarios selector                       |
+| [rc_gen.jar]()         | Redundant constraints generator          |
 
-We provide two bash scripts that perform all necessary steps from *compiling the source code* to *running the DirectDebug evaluation process*.
+Please download these apps, and put them into the *./app* folder.
 
-First, **run.sh** will compile the source files, package them in one *jar* file, and run only the DirectDebug evaluation step (Step 5) with the dataset used for the paper.
+#### Use bash scripts
 
-Second, **run_all.sh** will carry out all five steps of the DirectDebug evaluation process, and you will get the new dataset, new results. Three steps Feature model generation, Testsuite generation, and Test case classification will take a long time to complete. Thus, if you have around 3-4 free days, then try with **run_all.sh**. Otherwise, please run the evaluation process step-by-step using our **d2bug_eval.jar**.
+To facilitate the evaluation executions, we provide eight bash scripts as the following:
 
-To run these bash scripts on your system after cloning the source code:
+| *apps*                | *description*                                                                                                                     | *notes*                   |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|---------------------------|
+| ```run.sh```                | Execute all evaluations and get results for two [evaluation tables](#evaluation-results)                                          | 4 - 5 days exeuction      |
+| ```run_wipeoutr_t.sh```     | Execute the WipeOutR_T evaluation and get results for *wr_t_runtime* elements in the [Table 5](#evaluation-results)               | 2 - 3 days execution      |
+| ```run_ts_runtime.sh```     | Execute the test cases checks and get results for *ts_runtime*/*nonred_ts_runtime* elements in the [Table 5](#evaluation-results) |                           |
+| ```run_wipeoutr_fm.sh```    | Execute the WipeOutR_FM evaluation and get results for *wr_fm_runtime* elements in the [Table 6](#evaluation-results)             |                           |
+| ```run_solver_runtime.sh``` | Execute the solution search and get results for *sol_runtime*/*nonred_sol_runtime* elements in the [Table 6](#evaluation-results) |                           |
+| ```run_ts_gen.sh```         | Generate a test suite for the *Linux-2.6.33.3* feature model                                                                      | 4 - 5 days execution      |
+| ```run_ts_select.sh```      | Select 12 scenarios with the #T cardinalities of 10, 50, 100, 250, and the redundancy ratios of 0%, 50%, and 90%                  | 1 minute execution        |
+| ```run_rc_gen.sh```         | Generate redundant constraints for the *Linux-2.6.33.3* feature model                                                             | 15 - 20 minutes execution |
+
+To run these bash scripts on your system:
 
 1. First, you need to make the script executable with **chmod**:
 
@@ -134,7 +228,7 @@ $ ./run.sh
 
 #### Get the Maven dependencies from GitHub package repository
 
-Some part of our implementation depends on [CA-CDR library](https://github.com/manleviet/CA-CDR-V2). Thus, after cloning the source code into your system,
+Some part of our implementation depends on our [CA-CDR library](https://github.com/manleviet/CA-CDR-V2). Thus, after cloning the source code into your system,
 you need to add the below script in the *settings.xml* file to download the dependencies from GitHub package repository.
 
 ```xml
@@ -183,50 +277,112 @@ $ mvn clean package --settings <path to settings.xml>
 ```
 > If you don't have Maven in your computer, please follow the [Maven guide](https://maven.apache.org/download.cgi) to install it.
 
-#### Build your own software
+#### Move *jar* files to the *./app* folder
 
+Use the bash script ```move.sh``` to *jar* files to the *./app* folder.
 
+Finally, you could execute the evaluations using [bash scripts](#use-bash-scripts).
 
-### Construct Configuration files
+[//]: # (## Use the code source for your project)
 
-The software package supports a wide range of parameters as follows:
+[//]: # ()
+[//]: # (> [You need to get the Maven packages of our CA-CDR library]&#40;#get-the-maven-dependencies-from-github-package-repository&#41;)
 
-- ```showEvaluation```: (**false** by default) determines whether the program prints out the results to the console and the *results.txt* file.
-- ```showDebug```: (**false** by default) determines whether the program prints out the information messages to the console and the *results.txt* file.
-- ```CF```: (**10,20,50,100,500,1000** by default) a list of the numbers of constraints |CF|.
-- ```TC```: (**5,10,25,50,100,250,500** by default) a list of the numbers of test cases |Tπ|.
-- ```numGenFM```: (**3** by default) the number of feature model generated for each number of constraints |CF|.
-- ```CTC```: (**0.4** by default) the ratio of cross-tree constraints which generated feature models has to be attained.
-- ```numIter```: (**3** by default) the number of iterations |iter|.
-- ```perViolated_nonViolated```: (**0.3** by default) the percentage of violated test cases to non-violated test cases.
-- ```dataPath```: (**./data/** by default) the folder where the dataset is stored.
-- ```resultsPath```: (**./results/** by default) the folder where the results will be saved.
+[//]: # ()
+[//]: # ([Examples of using the WipeOutR algorithms for automated redundancy detection]&#40;https://github.com/AIG-ist-tugraz/WipeOutR/tree/main/src/test/java/at/tugraz/ist/ase/wipeoutr/algorithm&#41;)
 
-For further details on configuring these parameters, we refer to three example configuration files, **confForPaper.txt**, **conf1.1.txt**, **conf1.2.txt**. **confForPaper.txt** is used by **run.sh**, and two remaining files are used by **run_all.sh**.
+[//]: # ()
+[//]: # (### Knowledge bases)
 
-## Use the code source for your project
+[//]: # ()
+[//]: # (The WipeOutR algorithms supports two types of knowledge bases: &#40;1&#41; feature models and &#40;2&#41; CSP knowledge bases.)
 
-> [You need to get the Maven packages of the CA-CDR library](#get-the-maven-dependencies-from-github-package-repository)
+[//]: # ()
+[//]: # (#### Feature models)
 
-[An example of using the WipeOutR algorithms for automated redundancy detection](https://github.com/AIG-ist-tugraz/WipeOutR/tree/main/src/test/java/at/tugraz/ist/ase/wipeoutr/algorithm)
+[//]: # ()
+[//]: # (> We support only basic feature models [3].)
 
-**d2bug_eval** consists of three sub-packages: **Feature Model**, **MBDiagLib**, and **Debugging**.  
-**Feature Model** reads feature model files and supports *feature model generation* and *feature model statistics*. 
-**MBDiagLib** provides (1) an abstract model to hold variables and constraints, 
-(2) an abstract consistency checker for underlying solvers, 
-(3) a *Choco* consistency checker using [Choco Solver](https://choco-solver.org), 
-and (4) functions to measure the performance of algorithms in terms of run-time or the number of solver calls. 
-**Debugging** provides components w.r.t. test-cases management, the DirectDebug implementation, 
-a debugging model with test-cases integration, and debugging-related applications (e.g. *test suite generation*, 
-*test cases classification*, and *test case selection*).
+[//]: # ()
+[//]: # (Our **fm-package** in **CA-CDR** library supports five feature model formats:)
 
-Besides feature models encoded in the *SXFM* format and consistency checks conducted 
-by [Choco Solver](https://choco-solver.org), **d2bug_eval** can be extended to support further formats 
-(e.g., *FeatureIDE* format) and other off-the-shelf solvers. 
-Furthermore, the program can be extended to evaluate other constraint-based algorithms, 
-such as conflict detection algorithms and diagnosis identification algorithms.
+[//]: # (1. [SPLOT feature models]&#40;splot-research.org&#41;. The file extension could be “.sxfm” or “.splx.”)
+
+[//]: # (2. [FeatureIDE format]&#40;https://featureide.github.io&#41;. The file extension should be “xml.”)
+
+[//]: # (3. v.control format. The feature model format of the v.control tool. The file extension should be “xmi.”)
+
+[//]: # (4. [Glencoe format]&#40;https://glencoe.hochschule-trier.de&#41;. The file extension should be “json.”)
+
+[//]: # (5. [Descriptive format]&#40;https://github.com/manleviet/CA-CDR-V2/blob/main/fm-package/src/test/resources/bamboobike.fm4conf&#41;. Our feature model format. The file extension should be “fm4conf”.)
+
+[//]: # ()
+[//]: # ()
+[//]: # ()
+[//]: # (You could use [**FMParserFactory**]&#40;https://github.com/manleviet/CA-CDR-V2/blob/main/fm-package/src/main/java/at/tugraz/ist/ase/fm/parser/factory/FMParserFactory.java&#41;)
+
+[//]: # (to get the exact )
+
+[//]: # ()
+[//]: # (An example of using FMParserFactory to get )
+
+[//]: # ()
+[//]: # (### CSP knowledge bases)
+
+[//]: # ()
+[//]: # (You need to encode your knowledge base by inherited the class KB)
+
+[//]: # ()
+[//]: # (### WipeOutR_T)
+
+[//]: # ()
+[//]: # (To manage constraints/test cases for the WipeOutR_T algorithm, we provide the WipeOutRTModel which requires )
+
+[//]: # (two inputs: &#40;1&#41; a feature model and &#40;2&#41; a test suite.)
+
+[//]: # ()
+[//]: # ()
+[//]: # ()
+[//]: # (### WipeOutR_FM)
+
+[//]: # ()
+[//]: # (Like the WipeOutR_T algorithm, the WipeOutR_FM algorithm needs a WipeOutRFMModel )
+
+[//]: # ()
+[//]: # (**d2bug_eval** consists of three sub-packages: **Feature Model**, **MBDiagLib**, and **Debugging**.  )
+
+[//]: # (**Feature Model** reads feature model files and supports *feature model generation* and *feature model statistics*. )
+
+[//]: # (**MBDiagLib** provides &#40;1&#41; an abstract model to hold variables and constraints, )
+
+[//]: # (&#40;2&#41; an abstract consistency checker for underlying solvers, )
+
+[//]: # (&#40;3&#41; a *Choco* consistency checker using [Choco Solver]&#40;https://choco-solver.org&#41;, )
+
+[//]: # (and &#40;4&#41; functions to measure the performance of algorithms in terms of run-time or the number of solver calls. )
+
+[//]: # (**Debugging** provides components w.r.t. test-cases management, the DirectDebug implementation, )
+
+[//]: # (a debugging model with test-cases integration, and debugging-related applications &#40;e.g. *test suite generation*, )
+
+[//]: # (*test cases classification*, and *test case selection*&#41;.)
+
+[//]: # ()
+[//]: # (Besides feature models encoded in the *SXFM* format and consistency checks conducted )
+
+[//]: # (by [Choco Solver]&#40;https://choco-solver.org&#41;, **d2bug_eval** can be extended to support further formats )
+
+[//]: # (&#40;e.g., *FeatureIDE* format&#41; and other off-the-shelf solvers. )
+
+[//]: # (Furthermore, the program can be extended to evaluate other constraint-based algorithms, )
+
+[//]: # (such as conflict detection algorithms and diagnosis identification algorithms.)
 
 ## References
 
 [1] V.M. Le, A. Felfernig, M. Uta, T.N.T. Tran, C. Vidal, WipeOutR: Automated Redundancy Detection for Feature Models, 26th ACM International Systems and Software Product Line Conference (SPLC'22), 2022.
+
 [2] Heradio, R., Fernandez-Amoros, D., Galindo, J.A. et al. Uniform and scalable sampling of highly configurable systems. Empir Software Eng 27, 44 (2022). [https://doi.org/10.1007/s10664-021-10102-5](https://doi.org/10.1007/s10664-021-10102-5)
+
+[3] K. Kang, S. Cohen, J. Hess, W. Novak, and A. Peterson, ‘Feature-Oriented Domain Analysis (FODA) Feasibility Study’,
+Technical Report CMU/SEI-90-TR-021, Software Engineering Institute, Carnegie Mellon University, Pittsburgh, PA, (1990) [link](https://apps.dtic.mil/sti/pdfs/ADA235785.pdf)

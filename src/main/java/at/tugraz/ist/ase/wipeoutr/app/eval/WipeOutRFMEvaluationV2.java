@@ -40,10 +40,7 @@ import static at.tugraz.ist.ase.wipeoutr.eval.WipeOutREvaluation.*;
  * nameKB - name of the knowledge base
  * dataPath - path to the data folder, where you store the knowledge base
  * outputPath - path to the output folder, where the program will save the results
- *
- * Outputs two files:
- * - one file contains all redundancy-free constraints and Choco constraints
- * - another file contains the evaluation results
+ * numIter - number of iterations
  *
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */

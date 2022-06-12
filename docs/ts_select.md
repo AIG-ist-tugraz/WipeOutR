@@ -1,13 +1,29 @@
 # ts_select.jar
 
-**ts_select.jar** is a standalone Java application that generate test scenarios on the basic of a given test suite.
+**ts_select.jar** is a standalone Java application that select test scenarios on the basis of a given test suite.
+The number of test scenarios as well as the number of test cases in each scenario are specified by user via a [configuration file](#configuration-file).
+Besides, users could also customize redundancy test case ratios. With these ratios, the program will automatically generate
+redundant test cases on the basis of five-features test cases.
 
+### How it works
 
-generates a test suite for a given feature model.
-The test suite consists of five types of test cases: dead features, false optional, full mandatory, false mandatory, and partial configuration.
+For a given test suite, the program classifies the test suite into two groups:
+- *Group A* - A set of five-features test cases (e.g., ```t: A=true & B=false & C=true & D=false & E=true```)
+- *Group B* - A set of the remaining test cases
 
-This class selects randomly test cases (scenarios) from a test suites.
-* Besides, it also automatically generates redundant test cases according to the redundancy ratio.
+For each test scenario, with two given numbers - the number of test cases (```#T```) and the redundancy ratio (```red%```), the program could determine
+three important values:
+- The number of redundant test cases need to be generated - ```#red = #T * red%```
+- The number of non-redundant test cases selected from *Group A* - ```#Ta = #T / 30 + 1```  
+- The number of non-redundant test cases selected from *Group B* - ```#Tb = #T - #red - #Ta```
+
+After knowing these values, the program selects randomly ```#Ta``` and ```#Tb``` test cases from the corresponding group of test cases.
+Next, the program use ```#Ta``` test cases from Group A to generate ```#red``` redundant test cases.
+
+> A redundant test case of a given test case could be simply a subpart of the given test case. For instance,
+test case ```t1: A=true & B=false``` could have two redundant test cases ```t2: A=true``` and ```t3: B=false```.
+
+> **Note:** The program won't reselect test cases which are selected for other scenarios in the same execution.
 
 ### Usage
 
