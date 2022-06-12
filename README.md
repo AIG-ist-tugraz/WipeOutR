@@ -40,7 +40,7 @@ The folder *./conf* stores all configuration files used in the evaluations.
 ### WipeOutR_T evaluation
 
 To the **WipeOutR_T** algorithm, we analyzed different degrees of additionally induced redundancy with regard to the impact
-on (1) run-time of WipeOutR_R and (2) test case execution. In particular, the evaluation results are shown as the following:
+on (1) run-time of WipeOutR_R and (2) test case execution run-time. In particular, the evaluation results are shown in the paper as the following:
 
 *Table 5: Avg. runtime (sec) of **WipeOutR_T** in test set (T) evaluated on an Intel Core i7 (6 cores) 2.60GHz (16GB of RAM).*
 
@@ -51,6 +51,8 @@ on (1) run-time of WipeOutR_R and (2) test case execution. In particular, the ev
 | 100 | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* |
 | 250 | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* |
 
+> **Legends:**
+> 
 > *wr_t_runtime* - **WipeOutR_T** runtime
 >
 > *ts_runtime* - execution runtime with redundant T
@@ -63,7 +65,7 @@ The evaluation process for the algorithm **WipeOutR_T** consists of the followin
 
 We have generated a test suite for the *Linux-2.6.33.3* feature model.
 The test suite consists of 5 types of test cases: dead features, false optional, full mandatory, false mandatory, and partial configuration.
-The number of features in the generated partial configuration test cases are 2, 3, 4, and 5.
+Each partial configuration refers to 2-5 randomly features. 
 The folder *./data/testsuite* stores the test suite file with "testsuite" as its file name extension.
 
 | *type of test cases*  | *number of generated test cases* |
@@ -83,7 +85,8 @@ The folder *./data/testsuite* stores the test suite file with "testsuite" as its
 > - 4th line - the number of full mandatory test cases,
 > - 5th line - the number of false mandatory test cases, and
 > - 6th line - the number of partial configuration test cases.
-After the header, each line represents a test case.
+> 
+> After the header, each line represents a test case.
 
 [ts_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_gen_v1.0) is a *jar* file executing this step.
 For further details, please refer to the [ts_gen.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_gen.md).
@@ -101,7 +104,7 @@ For further details, please refer to the [ts_select.jar guideline](https://githu
 
 #### Step 3 - WipeOutR_T evaluation
 
-We calculate the average run-time of the **WipeOutR_T** algorithm (after three iterations) for 12 scenarios.
+We calculated the average run-time of the **WipeOutR_T** algorithm (after three iterations) for 12 scenarios.
 Evaluation results are filled in *wr_t_runtime* elements of the [Table 5](#wipeoutr_t-evaluation).
 
 [wipeoutr_t.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_t_v1.0) is a *jar* file executing this step.
@@ -109,7 +112,7 @@ For further details, please refer to the [wipeoutr_t.jar guideline](https://gith
 
 #### Step 4 - Test case execution evaluation
 
-We measure average test case execution run-times (after 3 iterations) for 12 scenarios 
+We measured average test case execution run-times (after 3 iterations) for 12 scenarios 
 in both cases of redundant scenario and non-redundant scenario. Evaluation results are filled in *ts_runtime*/*nonred_ts_runtime* elements of the [Table 5](#wipeoutr_t-evaluation).
 
 [ts_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_runtime_v1.0) is a *jar* file executing this step.
@@ -155,7 +158,7 @@ feature models with increased redundancy. The new redundancy ratios of the two v
 
 #### Step 3 - WipeOutR_FM evaluation
 
-We calculate the average run-time of the **WipeOutR_FM** algorithm (after three iterations) for three feature models, i.e., the original
+We calculated the average run-time of the **WipeOutR_FM** algorithm (after three iterations) for three feature models, i.e., the original
 feature model and two variants with 50% and 70% redundancy ratios.
 Evaluation results are filled in *wr_fm_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation)
 
@@ -164,7 +167,7 @@ For further details, please refer to the [wipeoutr_fm.jar guideline](https://git
 
 #### Step 4 - Solution search evaluation
 
-We measure average solution search run-times (after 3 iterations) for three feature models
+We measured average solution search run-times (after 3 iterations) for three feature models
 in both cases of redundant feature models and non-redundant feature models. Evaluation results are filled in *solver_runtime*/*nonred_solver_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation).
 
 [solver_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/solver_runtime_v1.0) is a *jar* file executing this step.
@@ -182,8 +185,8 @@ You can find our reproducible evaluation of **WipeOutR** algorithms [here](https
 > **Install Java**
 > 
 > If you have not installed Java or the Java version isn't the latest one, 
-> please go to Java's website at https://www.java.com/en/download/ and 
-> click on the Java Download button to download the latest version and install it.
+> please go to Java's website at https://www.java.com/en/download/,
+> download and install the latest version.
 
 #### Download the standalone Java applications
 
@@ -203,16 +206,16 @@ Please download these apps, and put them into the *./app* folder.
 
 To facilitate the evaluation executions, we provide eight bash scripts as the following:
 
-| *apps*                | *description*                                                                                                                     | *notes*                   |
+| *apps*                | *description*                                                                                                                     | *estimated runtime*                   |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| ```run.sh```                | Execute all evaluations and get results for two [evaluation tables](#evaluation-results)                                          | 4 - 5 days exeuction      |
-| ```run_wipeoutr_t.sh```     | Execute the **WipeOutR_T** evaluation and get results for *wr_t_runtime* elements in the [Table 5](#evaluation-results)               | 2 - 3 days execution      |
-| ```run_ts_runtime.sh```     | Execute the test cases checks and get results for *ts_runtime*/*nonred_ts_runtime* elements in the [Table 5](#evaluation-results) |                           |
-| ```run_wipeoutr_fm.sh```    | Execute the **WipeOutR_FM** evaluation and get results for *wr_fm_runtime* elements in the [Table 6](#evaluation-results)             |                           |
-| ```run_solver_runtime.sh``` | Execute the solution search and get results for *sol_runtime*/*nonred_sol_runtime* elements in the [Table 6](#evaluation-results) |                           |
-| ```run_ts_gen.sh```         | Generate a test suite for the *Linux-2.6.33.3* feature model                                                                      | 4 - 5 days execution      |
-| ```run_ts_select.sh```      | Select 12 scenarios with the #T cardinalities of 10, 50, 100, 250, and the redundancy ratios of 0%, 50%, and 90%                  | 1 minute execution        |
-| ```run_rc_gen.sh```         | Generate redundant constraints for the *Linux-2.6.33.3* feature model                                                             | 15 - 20 minutes execution |
+| ```run.sh```                | Execute all evaluations and get results for two evaluation tables - [Table 5](#wipeoutr_t-evaluation) and [Table 6](#wipeoutr_fm-evaluation)                                         | 5 - 6 days      |
+| ```run_wipeoutr_t.sh```     | Execute the **WipeOutR_T** evaluation and get results for *wr_t_runtime* elements in the [Table 5](#wipeoutr_t-evaluation)               | 4 - 5 days      |
+| ```run_ts_runtime.sh```     | Execute the test cases checks and get results for *ts_runtime*/*nonred_ts_runtime* elements in the [Table 5](#wipeoutr_t-evaluation) |                           |
+| ```run_wipeoutr_fm.sh```    | Execute the **WipeOutR_FM** evaluation and get results for *wr_fm_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation)             | 4 - 5 hours |
+| ```run_solver_runtime.sh``` | Execute the solution search and get results for *sol_runtime*/*nonred_sol_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation) |                           |
+| ```run_ts_gen.sh```         | Generate a test suite for the *Linux-2.6.33.3* feature model                                                                      | 4 - 5 days      |
+| ```run_ts_select.sh```      | Select 12 scenarios with the #T cardinalities of 10, 50, 100, 250, and the redundancy ratios of 0%, 50%, and 90%                  | 1 minute        |
+| ```run_rc_gen.sh```         | Generate redundant constraints for the *Linux-2.6.33.3* feature model                                                             | 15 - 20 minutes |
 
 To run these bash scripts on your system:
 
@@ -283,7 +286,7 @@ $ mvn clean package --settings <path to settings.xml>
 
 #### Move *jar* files to the *./app* folder
 
-Use the bash script "`move.sh` "to *jar* files to the *./app* folder.
+Use the bash script `move.sh` to move *jar* files to the *./app* folder.
 
 Finally, you could execute the evaluations using [bash scripts](#use-bash-scripts).
 
