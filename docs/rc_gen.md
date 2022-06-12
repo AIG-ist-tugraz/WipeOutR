@@ -1,9 +1,11 @@
 # rc_gen.jar
 
 **rc_gen.jar** is a standalone Java application that generates a set of redundant constraints for a given feature model.
-Generated redundant constraints includes:
+
+Generated redundant constraints include:
 - Excludes constraints between child features of alternative relationships
 - Requires constraints from an optional feature to a mandatory feature 
+
 Output constraints are encoded using the *FeatureIDE* format.
 
 ### Usage
