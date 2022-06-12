@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Add shell folder">
-      <change afterPath="$PROJECT_DIR$/shell/move.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/rc_gen.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/rc_gen.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/solver_runtime.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/solver_runtime.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ts_runtime.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ts_runtime.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ts_select.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ts_select.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/wipeoutr_fm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/wipeoutr_fm.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/wipeoutr_t.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/wipeoutr_t.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/data/TestCasesSelectorV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/data/TestCasesSelectorV2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/eval/RuntimeForTestcasesV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/eval/RuntimeForTestcasesV2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/eval/WipeOutRFMEvaluationV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/eval/WipeOutRFMEvaluationV2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/eval/WipeOutRTEvaluationV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/eval/WipeOutRTEvaluationV2.java" afterDir="false" />
-    </list>
+    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Update README.md and Add move.sh" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654697409724</updated>
       <workItem from="1654697411039" duration="16828000" />
-      <workItem from="1654778784123" duration="41295000" />
+      <workItem from="1654778784123" duration="41632000" />
     </task>
     <task id="LOCAL-00001" summary="First commit - camera-ready-version for SPLC'22">
       <created>1654706580498</created>
@@ -303,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654984559567</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Update README.md and Add move.sh">
+      <created>1654996189550</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1654996189550</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +328,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First commit - camera-ready-version for SPLC'22" />
     <MESSAGE value="Copyright updated" />
     <MESSAGE value="Comment updated" />
     <MESSAGE value="README updated" />
@@ -361,7 +352,8 @@
     <MESSAGE value="Update gitignore" />
     <MESSAGE value="Add docs" />
     <MESSAGE value="Add shell folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add shell folder" />
+    <MESSAGE value="Update README.md and Add move.sh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md and Add move.sh" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

@@ -1,9 +1,9 @@
 # WipeOutR: Automated Redundancy Detection for Feature Models
 
-WipeOutR is an algorithmic approach to support the automated identification of redundancies in feature models (FM) and FM test suites.
+**WipeOutR** is an algorithmic approach to support the automated identification of redundancies in feature models (FM) and FM test suites.
 This approach has the potential to significantly improve the quality of feature model development and configuration.
 
-This repository shows the implementation and the evaluation of the WipeOutR algorithms,
+This repository shows the implementation and the evaluation of the **WipeOutR** algorithms,
 which will be presented at the SPLC 2022 in the paper entitled
 *WipeOutR: Automated Redundancy Detection for Feature Models*.
 The research community can exploit this repository to reproduce the work described in our paper fully.
@@ -22,27 +22,27 @@ The research community can exploit this repository to reproduce the work describ
 
 | *folder*         | *description*                                                                      |
 |------------------|------------------------------------------------------------------------------------|
-| ./conf           | contains all configuration files used in the evaluation of the WipeOutR algorithms |
+| ./conf           | contains all configuration files used in the evaluation of the **WipeOutR** algorithms |
 | ./data           | stores *Linux-2.6.33.3* feature models, a test suite, and scenarios                |
 | ./data/testsuite | stores a test suite of the original *Linux-2.6.33.3* feature model                 |
-| ./data/scenarios | contains scenarios selected to evaluate the WipeOutR_T algorithm                   |
+| ./data/scenarios | contains scenarios selected to evaluate the **WipeOutR_T** algorithm                   |
 | ./results        | where results will be stored                                                       |
 | ./src            | source code                                                                        |
 | *.sh             | bash scripts to execute the evaluations                                            |
 
 ## Evaluation process
 
-We have evaluated the WipeOutR algorithms using the *Linux-2.6.33.3* feature model
+We have evaluated the **WipeOutR** algorithms using the *Linux-2.6.33.3* feature model
 taken from [Diverso Lab's benchmark](https://github.com/diverso-lab/benchmarking) [2].
 To ensure the reproducibility of the results, we have used the seed value of **141982L** for the random number generator.
 The folder *./conf* stores all configuration files used in the evaluations.
 
 ### WipeOutR_T evaluation
 
-To the WipeOutR_T algorithm, we analyzed different degrees of additionally induced redundancy with regard to the impact
+To the **WipeOutR_T** algorithm, we analyzed different degrees of additionally induced redundancy with regard to the impact
 on (1) runtime of WipeOutR_R and (2) test case execution. In particular, the evaluation results are shown as the following:
 
-*Table 5: Avg. runtime (sec) of WipeOutR_T in test set (T) evaluated on an Intel Core i7 (6 cores) 2.60GHz (16GB of RAM).*
+*Table 5: Avg. runtime (sec) of **WipeOutR_T** in test set (T) evaluated on an Intel Core i7 (6 cores) 2.60GHz (16GB of RAM).*
 
 | #T  | 0% redundancy                                       | 50% redundancy                                      | 90% redundancy                                      |
 |-----|-----------------------------------------------------|-----------------------------------------------------|-----------------------------------------------------|
@@ -51,13 +51,13 @@ on (1) runtime of WipeOutR_R and (2) test case execution. In particular, the eva
 | 100 | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* |
 | 250 | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* | *wr_t_runtime* / *ts_runtime* / *nonred_ts_runtime* |
 
-> *wr_t_runtime* - WipeOutR_T runtime
+> *wr_t_runtime* - **WipeOutR_T** runtime
 >
 > *ts_runtime* - execution runtime with redundant T
 >
 > *nonred_ts_runtime* - execution runtime with non-redundant T
 
-The evaluation process for the algorithm WipeOutR_T consists of the following **four** steps:
+The evaluation process for the algorithm **WipeOutR_T** consists of the following **four** steps:
 
 #### Step 1 - Test suite generation
 
@@ -87,7 +87,7 @@ For further details, please refer to the [ts_gen.jar guideline](https://github.c
 
 Based on the generated test suite in Step 1, we have selected 12 test scenarios with the test set cardinalities of 10, 50, 100, 250, and 
 the redundancy ratios of 0%, 50%, and 90%. Besides, for each selected redundant scenario,
-we used the WipeOutR_T algorithm to obtain its non-redundant scenario, which is used in Step 4 to compare test case executions. 
+we used the **WipeOutR_T** algorithm to obtain its non-redundant scenario, which is used in Step 4 to compare test case executions. 
 
 The folder *./data/scenarios* stores the selected scenarios.
 
@@ -96,7 +96,7 @@ For further details, please refer to the [ts_select.jar guideline](https://githu
 
 #### Step 3 - WipeOutR_T evaluation
 
-We calculate the average run-time of the WipeOutR_T algorithm (after 3 iterations) for 12 scenarios.
+We calculate the average run-time of the **WipeOutR_T** algorithm (after 3 iterations) for 12 scenarios.
 Evaluation results are filled in *wr_t_runtime* elements of the [Table 5](#wipeoutr_t-evaluation)
 
 [wipeoutr_t.jar]() is a *jar* file executing this step.
@@ -112,10 +112,10 @@ For further details, please refer to the [ts_runtime.jar guideline](https://gith
 
 ### WipeOutR_FM evaluation
 
-To the WipeOutR_FM algorithm, we analyzed (1) runtime of WipeOutR_FM 
+To the **WipeOutR_FM** algorithm, we analyzed (1) runtime of **WipeOutR_FM** 
 and (2) solution search on the basis of increased redundancy degrees in CF. Evaluation results are shown as the following:
 
-*Table 6: Avg. runtime (sec) of WipeOutR_FM evaluated on an Intel Core i7 (6 cores) 2.60GHz (16GB of RAM).*
+*Table 6: Avg. runtime (sec) of **WipeOutR_FM** evaluated on an Intel Core i7 (6 cores) 2.60GHz (16GB of RAM).*
 
 | #CF    | red.%  | runtime         | solv. (red.)  | solv. (non-red)      |
 |--------|--------|-----------------|---------------|----------------------|
@@ -123,13 +123,13 @@ and (2) solution search on the basis of increased redundancy degrees in CF. Eval
 | 18,342 | 50%    | *wr_fm_runtime* | *sol_runtime* | *nonred_sol_runtime* |
 | 30,572 | 70%    | *wr_fm_runtime* | *sol_runtime* | *nonred_sol_runtime* |
 
-> *wr_fm_runtime* - WipeOutR_FM runtime
+> *wr_fm_runtime* - **WipeOutR_FM** runtime
 >
 > *sol_runtime* - solution search runtime on the redundant feature model
 >
 > *nonred_sol_runtime* - solution search runtime on the non-redundant feature model
 
-The evaluation process for the algorithm WipeOutR_FM consists of the following **four** steps:
+The evaluation process for the algorithm **WipeOutR_FM** consists of the following **four** steps:
 
 #### Step 1 - Redundant constraints generation
 
@@ -151,7 +151,7 @@ in comparison with 34.36% of the original feature model.
 
 #### Step 3 - WipeOutR_FM evaluation
 
-We calculate the average run-time of the WipeOutR_FM algorithm (after 3 iterations) for three feature models, i.e., the original
+We calculate the average run-time of the **WipeOutR_FM** algorithm (after 3 iterations) for three feature models, i.e., the original
 feature model and two variants with 50% and 70% redundancy ratio.
 Evaluation results are filled in *wr_fm_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation)
 
@@ -171,7 +171,7 @@ For further details, please refer to the [solver_runtime.jar guideline](https://
 ### Use a CodeOcean capsule
 
 The easiest way to reproduce the experiment is to use a [CodeOcean](https://codeocean.com) capsule.
-You could find our reproducible evaluation of WipeOutR algorithms in [here](https://codeocean.com/capsule/5824065/tree/v1).
+You could find our reproducible evaluation of **WipeOutR** algorithms in [here](https://codeocean.com/capsule/5824065/tree/v1).
 
 ### Use the standalone Java applications
 
@@ -185,9 +185,9 @@ You could find our reproducible evaluation of WipeOutR algorithms in [here](http
 
 | *apps*                 | *description*                            |
 |------------------------|------------------------------------------|
-| [wipeoutr_t.jar]()     | WipeOutR_T evaluation                    |
+| [wipeoutr_t.jar]()     | **WipeOutR_T** evaluation                    |
 | [ts_runtime.jar]()     | Execution runtime of a set of test cases |
-| [wipeoutr_fm.jar]()    | WipeOutR_FM evaluation                   |
+| [wipeoutr_fm.jar]()    | **WipeOutR_FM** evaluation                   |
 | [solver_runtime.jar]() | Solution search runtime                  |
 | [ts_gen.jar]()         | Test suite generator                     |
 | [ts_select.jar]()      | Scenarios selector                       |
@@ -202,9 +202,9 @@ To facilitate the evaluation executions, we provide eight bash scripts as the fo
 | *apps*                | *description*                                                                                                                     | *notes*                   |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|---------------------------|
 | ```run.sh```                | Execute all evaluations and get results for two [evaluation tables](#evaluation-results)                                          | 4 - 5 days exeuction      |
-| ```run_wipeoutr_t.sh```     | Execute the WipeOutR_T evaluation and get results for *wr_t_runtime* elements in the [Table 5](#evaluation-results)               | 2 - 3 days execution      |
+| ```run_wipeoutr_t.sh```     | Execute the **WipeOutR_T** evaluation and get results for *wr_t_runtime* elements in the [Table 5](#evaluation-results)               | 2 - 3 days execution      |
 | ```run_ts_runtime.sh```     | Execute the test cases checks and get results for *ts_runtime*/*nonred_ts_runtime* elements in the [Table 5](#evaluation-results) |                           |
-| ```run_wipeoutr_fm.sh```    | Execute the WipeOutR_FM evaluation and get results for *wr_fm_runtime* elements in the [Table 6](#evaluation-results)             |                           |
+| ```run_wipeoutr_fm.sh```    | Execute the **WipeOutR_FM** evaluation and get results for *wr_fm_runtime* elements in the [Table 6](#evaluation-results)             |                           |
 | ```run_solver_runtime.sh``` | Execute the solution search and get results for *sol_runtime*/*nonred_sol_runtime* elements in the [Table 6](#evaluation-results) |                           |
 | ```run_ts_gen.sh```         | Generate a test suite for the *Linux-2.6.33.3* feature model                                                                      | 4 - 5 days execution      |
 | ```run_ts_select.sh```      | Select 12 scenarios with the #T cardinalities of 10, 50, 100, 250, and the redundancy ratios of 0%, 50%, and 90%                  | 1 minute execution        |
@@ -289,13 +289,13 @@ Finally, you could execute the evaluations using [bash scripts](#use-bash-script
 [//]: # (> [You need to get the Maven packages of our CA-CDR library]&#40;#get-the-maven-dependencies-from-github-package-repository&#41;)
 
 [//]: # ()
-[//]: # ([Examples of using the WipeOutR algorithms for automated redundancy detection]&#40;https://github.com/AIG-ist-tugraz/WipeOutR/tree/main/src/test/java/at/tugraz/ist/ase/wipeoutr/algorithm&#41;)
+[//]: # ([Examples of using the **WipeOutR** algorithms for automated redundancy detection]&#40;https://github.com/AIG-ist-tugraz/WipeOutR/tree/main/src/test/java/at/tugraz/ist/ase/wipeoutr/algorithm&#41;)
 
 [//]: # ()
 [//]: # (### Knowledge bases)
 
 [//]: # ()
-[//]: # (The WipeOutR algorithms supports two types of knowledge bases: &#40;1&#41; feature models and &#40;2&#41; CSP knowledge bases.)
+[//]: # (The **WipeOutR** algorithms supports two types of knowledge bases: &#40;1&#41; feature models and &#40;2&#41; CSP knowledge bases.)
 
 [//]: # ()
 [//]: # (#### Feature models)
@@ -336,7 +336,7 @@ Finally, you could execute the evaluations using [bash scripts](#use-bash-script
 [//]: # (### WipeOutR_T)
 
 [//]: # ()
-[//]: # (To manage constraints/test cases for the WipeOutR_T algorithm, we provide the WipeOutRTModel which requires )
+[//]: # (To manage constraints/test cases for the **WipeOutR_T** algorithm, we provide the WipeOutRTModel which requires )
 
 [//]: # (two inputs: &#40;1&#41; a feature model and &#40;2&#41; a test suite.)
 
@@ -346,7 +346,7 @@ Finally, you could execute the evaluations using [bash scripts](#use-bash-script
 [//]: # (### WipeOutR_FM)
 
 [//]: # ()
-[//]: # (Like the WipeOutR_T algorithm, the WipeOutR_FM algorithm needs a WipeOutRFMModel )
+[//]: # (Like the **WipeOutR_T** algorithm, the **WipeOutR_FM** algorithm needs a WipeOutRFMModel )
 
 [//]: # ()
 [//]: # (**d2bug_eval** consists of three sub-packages: **Feature Model**, **MBDiagLib**, and **Debugging**.  )
