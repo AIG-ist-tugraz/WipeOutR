@@ -15,7 +15,7 @@ The research community can fully exploit this repository to reproduce the work d
 - [How to reproduce the experiment](#how-to-reproduce-the-experiment)
   - [Use a CodeOcean capsule](#use-a-codeocean-capsule)
   - [Use the standalone Java applications](#use-the-standalone-java-applications)
-  - [Get your own copy to run offline](#get-your-copy-to-run-offline)
+  - [Get your copy to run offline](#get-your-copy-to-run-offline)
 
 ## Repository structure
 
