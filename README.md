@@ -80,7 +80,7 @@ The folder *./data/testsuite* stores the test suite file with "testsuite" as its
 number of false optional test cases, number of full mandatory test cases, number of false mandatory test cases,
 and number of partial configuration test cases. After the header, each line represents a test case.
 
-[ts_gen.jar]() is a *jar* file executing this step.
+[ts_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_gen_v1.0) is a *jar* file executing this step.
 For further details, please refer to the [ts_gen.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_gen.md).
 
 #### Step 2 - Scenario selection
@@ -91,7 +91,7 @@ we used the **WipeOutR_T** algorithm to obtain its non-redundant scenario, which
 
 The folder *./data/scenarios* stores the selected scenarios.
 
-[ts_select.jar]() is a *jar* file executing this step. 
+[ts_select.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_select_v1.0) is a *jar* file executing this step. 
 For further details, please refer to the [ts_select.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_select.md).
 
 #### Step 3 - WipeOutR_T evaluation
@@ -99,7 +99,7 @@ For further details, please refer to the [ts_select.jar guideline](https://githu
 We calculate the average run-time of the **WipeOutR_T** algorithm (after 3 iterations) for 12 scenarios.
 Evaluation results are filled in *wr_t_runtime* elements of the [Table 5](#wipeoutr_t-evaluation).
 
-[wipeoutr_t.jar]() is a *jar* file executing this step.
+[wipeoutr_t.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_t_v1.0) is a *jar* file executing this step.
 For further details, please refer to the [wipeoutr_t.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/wipeoutr_t.md).
 
 #### Step 4 - Test case execution evaluation
@@ -107,7 +107,7 @@ For further details, please refer to the [wipeoutr_t.jar guideline](https://gith
 We measure average test case execution run-times (after 3 iterations) for 12 scenarios 
 in both cases of redundant scenario and non-redundant scenario. Evaluation results are filled in *ts_runtime*/*nonred_ts_runtime* elements of the [Table 5](#wipeoutr_t-evaluation).
 
-[ts_runtime.jar]() is a *jar* file executing this step.
+[ts_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_runtime_v1.0) is a *jar* file executing this step.
 For further details, please refer to the [ts_runtime.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_runtime.md).
 
 ### WipeOutR_FM evaluation
@@ -140,7 +140,7 @@ We have generated automatically a set of redundant constraints. These constraint
 For the *Linux-2.6.33.3* feature model, we generated *693* redundant constraints of the first type and *51531* redundant constraints
 of the second type.
 
-[rc_gen.jar]() is a *jar* file executing this step.
+[rc_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/rc_gen_v1.0) is a *jar* file executing this step.
 For further details, please refer to the [rc_gen.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/rc_gen.md).
 
 #### Step 2 - Create two variant feature models with increased redundancy
@@ -155,15 +155,15 @@ We calculate the average run-time of the **WipeOutR_FM** algorithm (after 3 iter
 feature model and two variants with 50% and 70% redundancy ratio.
 Evaluation results are filled in *wr_fm_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation)
 
-[wipeoutr_t.jar]() is a *jar* file executing this step.
-For further details, please refer to the [wipeoutr_t.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/wipeoutr_t.md).
+[wipeoutr_fm.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_fm_v1.0) is a *jar* file executing this step.
+For further details, please refer to the [wipeoutr_fm.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/wipeoutr_fm.md).
 
 #### Step 4 - Solution search evaluation
 
 We measure average solution search run-times (after 3 iterations) for three feature models
 in both cases of redundant feature models and non-redundant feature models. Evaluation results are filled in *solver_runtime*/*nonred_solver_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation).
 
-[solver_runtime.jar]() is a *jar* file executing this step.
+[solver_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/solver_runtime_v1.0) is a *jar* file executing this step.
 For further details, please refer to the [solver_runtime.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/solver_runtime.md).
 
 ## How to reproduce the experiment
@@ -185,13 +185,13 @@ You could find our reproducible evaluation of **WipeOutR** algorithms in [here](
 
 | *apps*                 | *description*                            |
 |------------------------|------------------------------------------|
-| [wipeoutr_t.jar]()     | **WipeOutR_T** evaluation                    |
-| [ts_runtime.jar]()     | Execution runtime of a set of test cases |
-| [wipeoutr_fm.jar]()    | **WipeOutR_FM** evaluation                   |
-| [solver_runtime.jar]() | Solution search runtime                  |
-| [ts_gen.jar]()         | Test suite generator                     |
-| [ts_select.jar]()      | Scenarios selector                       |
-| [rc_gen.jar]()         | Redundant constraints generator          |
+| [wipeoutr_t.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_t_v1.0)     | **WipeOutR_T** evaluation                    |
+| [ts_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_runtime_v1.0)     | Execution runtime of a set of test cases |
+| [wipeoutr_fm.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_fm_v1.0)    | **WipeOutR_FM** evaluation                   |
+| [solver_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/solver_runtime_v1.0) | Solution search runtime                  |
+| [ts_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_gen_v1.0)         | Test suite generator                     |
+| [ts_select.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_select_v1.0)      | Scenarios selector                       |
+| [rc_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/rc_gen_v1.0)         | Redundant constraints generator          |
 
 Please download these apps, and put them into the *./app* folder.
 
