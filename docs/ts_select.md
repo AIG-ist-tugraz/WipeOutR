@@ -48,7 +48,7 @@ The configuration file needs the following parameters:
 | ```cardTC```     | **5,10,25,50,100,250,500** | list of numbers of test cases want to be selected in scenarios |
 | ```redRatio```   | **0.0,0.2,0.5,0.7,0.9**    | list of redundancy ratios in scenarios                         |
 
-For examples on configuring these parameters, we refer to configuration files in the folder *./conf*.
+For examples of configuring these parameters, we refer to configuration files in the folder *./conf*.
 
 ## Scenario file structure
 
