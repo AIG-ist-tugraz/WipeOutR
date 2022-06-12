@@ -24,4 +24,4 @@ The configuration file needs the following parameters:
 | ```outputPath``` | **./results/**  | the folder where the results will be saved |
 | ```numIter```    | **3**           | number of iterations                       |
 
-For examples on configuring these parameters, we refer to configuration files in the folder *./conf*.
+For examples of configuring these parameters, we refer to configuration files in the folder *./conf*.
