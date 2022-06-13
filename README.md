@@ -135,6 +135,8 @@ and (2) solution search on the basis of increased redundancy degrees in CF. Eval
 | 18,342 | 50%    | *wr_fm_runtime* | *sol_runtime* | *nonred_sol_runtime* |
 | 30,572 | 70%    | *wr_fm_runtime* | *sol_runtime* | *nonred_sol_runtime* |
 
+> **Legends:**
+> 
 > *wr_fm_runtime* - **WipeOutR_FM** runtime
 >
 > *sol_runtime* - solution search runtime on the redundant feature model
@@ -180,9 +182,9 @@ For further details, we refer to the [solver_runtime.jar guideline](https://gith
 ## How to reproduce the experiment
 
 You can reproduce the experiment by choosing one of three following ways:
-1 [Build a Docker image](#build-a-docker-image)
-2 [Use pre-build Java applications](#use-pre-build-java-applications)
-3 [Build apps by yourself](#build-apps-by-yourself)
+1. [Build a Docker image](#build-a-docker-image)
+2. [Use pre-build Java applications](#use-pre-build-java-applications)
+3. [Build apps by yourself](#build-apps-by-yourself)
 
 ### Build a Docker image
 
