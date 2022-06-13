@@ -1,0 +1,19 @@
+Test case runtime evaluation - WipeOutR_T
+Configurations:
+	nameKB: linux-2.6.33.3
+	dataPath: ../data/
+	scenarioPath: ../data/scenarios/10/10_90_nonred/
+	outputPath: ../results/
+	numOfIter: 3
+Evaluating...
+	========================
+	LINUX-2.6.3_10_90_S_NONRED.TESTCASES
+	Time for test running: 0.048731443
+	========================
+	LINUX-2.6.3_10_90_S_NONRED.TESTCASES
+	Time for test running: 0.022196279
+	========================
+	LINUX-2.6.3_10_90_S_NONRED.TESTCASES
+	Time for test running: 0.01879901
+Average time for test running: 0.029908910666666667
+DONE
