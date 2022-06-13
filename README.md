@@ -27,7 +27,7 @@ The research community can fully exploit this repository to reproduce the work d
 | ./data/scenarios | contains scenarios selected to evaluate the **WipeOutR_T** algorithm                    |
 | ./data/results   | evaluation results published in the paper                                               |
 | ./docs           | guides of *jar* files                                                                   |
-| ./results        | where results will be stored                                                            |
+| ./results        | stores the results                                                       |
 | ./src            | source code                                                                             |
 | ./shell          | bash scripts to execute the evaluations                                                 |
 | ./docker         | a bash script and a copy of configuration files, which are used to build a Docker image |
@@ -43,7 +43,7 @@ The folder *./conf* stores all configuration files used in the evaluations.
 
 ### WipeOutR_T evaluation
 
-To the **WipeOutR_T** algorithm, we analyzed different degrees of additionally induced redundancy with regard to the impact
+To evaluate the **WipeOutR_T** algorithm, we analyzed different degrees of additionally induced redundancy with regard to the impact
 on (1) run-time of WipeOutR_R and (2) test case execution run-time. In particular, the evaluation results are shown in the paper as the following:
 
 *Table 5: Avg. runtime (sec) of **WipeOutR_T** in test set (T) evaluated on an Intel Core i7 (6 cores) 2.60GHz (16GB of RAM).*
@@ -63,12 +63,12 @@ on (1) run-time of WipeOutR_R and (2) test case execution run-time. In particula
 >
 > *nonred_ts_runtime* - execution runtime with non-redundant T
 
-The evaluation process for the algorithm **WipeOutR_T** consists of the following **four** steps:
+The evaluation process of the algorithm **WipeOutR_T** consists of the following **four** steps:
 
 #### Step 1 - Test suite generation
 
 We have generated a test suite for the *Linux-2.6.33.3* feature model.
-The test suite consists of 5 types of test cases: dead features, false optional, full mandatory, false mandatory, and partial configuration.
+The test suite includes 5 types of test cases: dead features, false optional, full mandatory, false mandatory, and partial configuration.
 Each partial configuration refers to 2-5 randomly features. 
 The folder *./data/testsuite* stores the test suite file with "testsuite" as its file name extension.
 
@@ -93,7 +93,7 @@ The folder *./data/testsuite* stores the test suite file with "testsuite" as its
 > After the header, each line represents a test case.
 
 [ts_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_gen_v1.0) is a *jar* file executing this step.
-For further details, please refer to the [ts_gen.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_gen.md).
+For further details, we refer to the [ts_gen.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_gen.md).
 
 #### Step 2 - Scenario selection
 
@@ -104,7 +104,7 @@ we used the **WipeOutR_T** algorithm to obtain its non-redundant scenario, which
 The folder *./data/scenarios* stores the selected scenarios.
 
 [ts_select.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_select_v1.0) is a *jar* file executing this step. 
-For further details, please refer to the [ts_select.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_select.md).
+For further details, we refer to the [ts_select.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_select.md).
 
 #### Step 3 - WipeOutR_T evaluation
 
@@ -112,7 +112,7 @@ We calculated the average run-time of the **WipeOutR_T** algorithm (after three 
 Evaluation results are filled in *wr_t_runtime* elements of the [Table 5](#wipeoutr_t-evaluation).
 
 [wipeoutr_t.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_t_v1.0) is a *jar* file executing this step.
-For further details, please refer to the [wipeoutr_t.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/wipeoutr_t.md).
+For further details, we refer to the [wipeoutr_t.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/wipeoutr_t.md).
 
 #### Step 4 - Test case execution evaluation
 
@@ -120,7 +120,7 @@ We measured average test case execution run-times (after 3 iterations) for 12 sc
 in both cases of redundant scenario and non-redundant scenario. Evaluation results are filled in *ts_runtime*/*nonred_ts_runtime* elements of the [Table 5](#wipeoutr_t-evaluation).
 
 [ts_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_runtime_v1.0) is a *jar* file executing this step.
-For further details, please refer to the [ts_runtime.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_runtime.md).
+For further details, we refer to the [ts_runtime.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_runtime.md).
 
 ### WipeOutR_FM evaluation
 
@@ -141,7 +141,7 @@ and (2) solution search on the basis of increased redundancy degrees in CF. Eval
 >
 > *nonred_sol_runtime* - solution search runtime on the non-redundant feature model
 
-The evaluation process for the algorithm **WipeOutR_FM** consists of the following **four** steps:
+The evaluation process of the algorithm **WipeOutR_FM** consists of the following **four** steps:
 
 #### Step 1 - Redundant constraints generation
 
@@ -153,7 +153,7 @@ For the *Linux-2.6.33.3* feature model, we generated *693* redundant constraints
 of the second type.
 
 [rc_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/rc_gen_v1.0) is a *jar* file executing this step.
-For further details, please refer to the [rc_gen.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/rc_gen.md).
+For further details, we refer to the [rc_gen.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/rc_gen.md).
 
 #### Step 2 - Create two variant feature models with increased redundancy
 
@@ -164,10 +164,10 @@ feature models with increased redundancy. The new redundancy ratios of the two v
 
 We calculated the average run-time of the **WipeOutR_FM** algorithm (after three iterations) for three feature models, i.e., the original
 feature model and two variants with 50% and 70% redundancy ratios.
-Evaluation results are filled in *wr_fm_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation)
+Evaluation results are filled in *wr_fm_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation).
 
 [wipeoutr_fm.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_fm_v1.0) is a *jar* file executing this step.
-For further details, please refer to the [wipeoutr_fm.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/wipeoutr_fm.md).
+For further details, we refer to the [wipeoutr_fm.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/wipeoutr_fm.md).
 
 #### Step 4 - Solution search evaluation
 
@@ -175,7 +175,7 @@ We measured average solution search run-times (after 3 iterations) for three fea
 in both cases of redundant feature models and non-redundant feature models. Evaluation results are filled in *solver_runtime*/*nonred_solver_runtime* elements of the [Table 6](#wipeoutr_fm-evaluation).
 
 [solver_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/solver_runtime_v1.0) is a *jar* file executing this step.
-For further details, please refer to the [solver_runtime.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/solver_runtime.md).
+For further details, we refer to the [solver_runtime.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/solver_runtime.md).
 
 ## How to reproduce the experiment
 
@@ -248,20 +248,20 @@ Please download these apps, and put them into the *./app* folder.
 
 #### Use bash scripts
 
-To facilitate the evaluation executions, we provide eight bash scripts as the following:
+To facilitate the evaluation executions, we provide the following eight bash scripts:
 
-| *apps*                      | *description*                                                                                                                                   | *estimated runtime* |
-|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| ```run.sh```                | Execute all evaluations and get results for two evaluation tables - [Table 5](#wipeoutr_t-evaluation) and [Table 6](#wipeoutr_fm-evaluation)    | 5 - 6 days          |
-| ```run_wipeoutr_t.sh```     | Execute the **WipeOutR_T** evaluation and get results for *wr_t_runtime* elements in the [Table 5](#wipeoutr_t-evaluation)                      | 4 - 5 days          |
-| ```run_ts_runtime.sh```     | Execute the test cases checks and get results for *ts_runtime*/*nonred_ts_runtime* elements in the [Table 5](#wipeoutr_t-evaluation)            | 1 - 2 hours         |
-| ```run_wipeoutr_fm.sh```    | Execute the **WipeOutR_FM** evaluation and get results for *wr_fm_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation)                   | 4 - 5 hours         |
-| ```run_solver_runtime.sh``` | Execute the solution search and get results for *sol_runtime*/*nonred_sol_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation)           | 2 - 3 minutes       |
-| ```run_ts_gen.sh```         | Generate a test suite for the *Linux-2.6.33.3* feature model                                                                                    | 4 - 5 days          |
-| ```run_ts_select.sh```      | Select 12 scenarios with the #T cardinalities of 10, 50, 100, 250, and the redundancy ratios of 0%, 50%, and 90%                                | 1 minute            |
-| ```run_rc_gen.sh```         | Generate redundant constraints for the *Linux-2.6.33.3* feature model                                                                           | 15 - 20 minutes     |
+| *apps*                      | *description*                                                                                                                                  | *estimated runtime* |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| ```run.sh```                | Executes all evaluations and gets results for two evaluation tables - [Table 5](#wipeoutr_t-evaluation) and [Table 6](#wipeoutr_fm-evaluation) | 5 - 6 days          |
+| ```run_wipeoutr_t.sh```     | Executes the **WipeOutR_T** evaluation and gets results for *wr_t_runtime* elements in the [Table 5](#wipeoutr_t-evaluation)                   | 4 - 5 days          |
+| ```run_ts_runtime.sh```     | Executes the test cases checks and gets results for *ts_runtime*/*nonred_ts_runtime* elements in the [Table 5](#wipeoutr_t-evaluation)         | 1 - 2 hours         |
+| ```run_wipeoutr_fm.sh```    | Executes the **WipeOutR_FM** evaluation and gets results for *wr_fm_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation)                | 4 - 5 hours         |
+| ```run_solver_runtime.sh``` | Executes the solution search and gets results for *sol_runtime*/*nonred_sol_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation)        | 2 - 3 minutes       |
+| ```run_ts_gen.sh```         | Generates a test suite for the *Linux-2.6.33.3* feature model                                                                                  | 4 - 5 days          |
+| ```run_ts_select.sh```      | Selects 12 scenarios with the #T cardinalities of 10, 50, 100, 250, and the redundancy ratios of 0%, 50%, and 90%                              | 1 minute            |
+| ```run_rc_gen.sh```         | Generates redundant constraints for the *Linux-2.6.33.3* feature model                                                                         | 15 - 20 minutes     |
 
-To run these bash scripts on your system:
+To run these bash scripts in your system:
 
 1. First, you need to make the script executable with **chmod**:
 

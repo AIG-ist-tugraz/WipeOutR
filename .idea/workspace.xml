@@ -7,6 +7,13 @@
     <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Update README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/rc_gen.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/rc_gen.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/solver_runtime.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/solver_runtime.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ts_gen.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ts_gen.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ts_runtime.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ts_runtime.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ts_select.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ts_select.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/wipeoutr_fm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/wipeoutr_fm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/wipeoutr_t.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/wipeoutr_t.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -384,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655110481707</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Update README.md">
+      <created>1655111100783</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1655111100783</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

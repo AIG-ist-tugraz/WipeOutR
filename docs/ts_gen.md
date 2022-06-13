@@ -20,20 +20,20 @@ The test suite consists of five types of test cases: dead features, false option
 java -jar ts_gen.jar [-cfg <path-to-configuration-file>]
 ```
 
-If the parameter `-cfg` isn't specified, the program will find the default configuration file in `./conf/ts_gen.cfg`.
+If the parameter `-cfg` has not been specified, the program will find the default configuration file in `./conf/ts_gen.cfg`.
 
 ### Configuration file
 
 The configuration file needs the following parameters:
 
-| *parameters* | *default value* | *description*                                                                                                                            |
-| ----------- |-----------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| ```nameKB``` | **null**        | filename of the feature model                                                                                                            |
-| ```dataPath``` | **./data/**     | the folder where the dataset is stored                                                                                                   |
-| ```outputPath``` | **./results/**  | the folder where the results will be saved                                                                                               |
-| ```maxCombinations``` | **3000**        | maximum number of combinations to generate for each cardinality of features (used in the generation of partial configuration test cases) |
-| ```randomlySearch``` | **false**       | randomly select combinations from a list of combinations (used in the generation of partial configuration test cases)                    |
-| ```maxFeaturesInTestCase``` | **5**           | maximum number of features in a test case (used in the generation of partial configuration test cases)                                   |
+| *parameters* | *default value* | *description*                                                                                                                                |
+| ----------- |-----------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| ```nameKB``` | **null**        | the filename of the feature model                                                                                                            |
+| ```dataPath``` | **./data/**     | the folder where the dataset is stored                                                                                                       |
+| ```outputPath``` | **./results/**  | the folder where the results will be saved                                                                                                   |
+| ```maxCombinations``` | **3000**        | the maximum number of combinations to generate for each cardinality of features (used in the generation of partial configuration test cases) |
+| ```randomlySearch``` | **false**       | whether the program randomly selects combinations from a list of combinations (used in the generation of partial configuration test cases)   |
+| ```maxFeaturesInTestCase``` | **5**           | the maximum number of features in a test case (used in the generation of partial configuration test cases)                                   |
 
 For examples of configuring these parameters, we refer to configuration files in the folder *./conf*.
 
@@ -47,4 +47,4 @@ A test suite file starts with the six-lines header. Each header line has a numbe
 - 5th line - the number of false mandatory test cases, and
 - 6th line - the number of partial configuration test cases.
 
-After the header, each line represents a test case.
+Following the header, each line represents a test case.

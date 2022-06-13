@@ -17,16 +17,16 @@ Output constraints are encoded using the *FeatureIDE* format.
 java -jar rc_gen.jar [-cfg <path-to-configuration-file>]
 ```
 
-If the parameter `-cfg` isn't specified, the program will find the default configuration file in `./conf/rc_gen.cfg`.
+If the parameter `-cfg` has not been specified, the program will find the default configuration file in `./conf/rc_gen.cfg`.
 
 ### Configuration file
 
 The configuration file needs the following parameters:
 
-| *parameters* | *default value* | *description*                                                                                                                            |
-| ----------- |-----------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| ```nameKB``` | **null**        | filename of the feature model                                                                                                            |
-| ```dataPath``` | **./data/**     | the folder where the dataset is stored                                                                                                   |
-| ```outputPath``` | **./results/**  | the folder where the results will be saved                                                                                               |
+| *parameters* | *default value* | *description*                              |
+| ----------- |-----------------|--------------------------------------------|
+| ```nameKB``` | **null**        | the filename of the feature model          |
+| ```dataPath``` | **./data/**     | the folder where the dataset is stored     |
+| ```outputPath``` | **./results/**  | the folder where the results will be saved |
 
 For examples of configuring these parameters, we refer to configuration files in the folder *./conf*.
