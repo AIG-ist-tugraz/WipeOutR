@@ -40,3 +40,4 @@ build/
 *.zip
 *.log
 /app/
+/results/
