@@ -14,7 +14,7 @@ The research community can fully exploit this repository to reproduce the work d
 - [Evaluation process](#evaluation-process)
 - [How to reproduce the experiment](#how-to-reproduce-the-experiment)
   - [Build a Docker image](#build-a-docker-image)
-  - [Use the standalone Java applications](#use-the-standalone-java-applications)
+  - [Use pre-build Java applications](#use-pre-build-java-applications)
   - [Build apps by yourself](#build-apps-by-yourself)
 
 ## Repository structure
@@ -179,6 +179,11 @@ For further details, please refer to the [solver_runtime.jar guideline](https://
 
 ## How to reproduce the experiment
 
+You can reproduce the experiment by choosing one of three following ways:
+1 [Build a Docker image](#build-a-docker-image)
+2 [Use pre-build Java applications](#use-pre-build-java-applications)
+3 [Build apps by yourself](#build-apps-by-yourself)
+
 ### Build a Docker image
 
 > *Note:* The evaluation process in this Docker image would take 5 - 6 days to complete. If you want to reduce the runtime, 
@@ -216,7 +221,7 @@ docker run --rm --entrypoint tar wipeoutr-image cC ./results . | tar xvC ./resul
 
 [//]: # (> The code source on this GitHub repository has the Java target version set to 17, and uses the CA-CDR library version 1.3.8.)
 
-### Use the standalone Java applications
+### Use pre-build Java applications
 
 > **Install Java**
 > 

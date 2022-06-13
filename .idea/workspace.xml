@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Add Dockerfile">
+    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Update README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -378,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655107504892</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Update README.md">
+      <created>1655110481707</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1655110481707</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,13 +436,13 @@
     <MESSAGE value="Add shell folder" />
     <MESSAGE value="Update README.md and Add move.sh" />
     <MESSAGE value="Add linux-2.6.33.3_4370_new_nonred.txt and linux-2.6.33.3_16600_new_nonred.txt" />
-    <MESSAGE value="Update README.md" />
     <MESSAGE value="Add results for camera-ready-version" />
     <MESSAGE value="Add WipeOutR_T results for camera-ready-version" />
     <MESSAGE value="Fix ts_runtime_50_90_nonred.cfg" />
     <MESSAGE value="Add ts_runtime's results" />
     <MESSAGE value="Add Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Dockerfile" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
