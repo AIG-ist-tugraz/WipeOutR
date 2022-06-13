@@ -2,7 +2,7 @@
 <!--
   ~ WipeOutR: Automated Redundancy Detection for Feature Models
   ~
-  ~ Copyright (c) 2022 AIG team, Institute for Software Technology,
+  ~ Copyright (c) 2022-2022 AIG team, Institute for Software Technology,
   ~ Graz University of Technology, Austria
   ~
   ~ Contact: http://ase.ist.tugraz.at/ASE/
@@ -38,7 +38,7 @@
         <server>
             <id>github</id>
             <username>USERNAME</username>
-            <password>PASSWORD</password>
+            <password>TOKEN</password>
         </server>
     </servers>
 </settings>

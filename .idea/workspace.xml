@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Add linux-2.6.33.3_4370_new_nonred.txt and linux-2.6.33.3_16600_new_nonred.txt">
+    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Add Dockerfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_directory_selection": "/Users/manleviet/Development/GitHub/WipeOutR/src/main/java",
-    "last_opened_file_path": "/Users/manleviet/Development/GitHub/WipeOutR/data",
+    "last_opened_file_path": "/Users/manleviet/Development/GitHub/WipeOutR/data/results/wipeoutr_t",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,17 +58,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/data/results/wipeoutr_t" />
       <recent name="$PROJECT_DIR$/shell" />
+      <recent name="$PROJECT_DIR$/conf/docker" />
+      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/data/scenarios/250/250_50_nonred" />
-      <recent name="$PROJECT_DIR$/docs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docker" />
+      <recent name="$PROJECT_DIR$/data/results/wipeoutr_t" />
+      <recent name="$PROJECT_DIR$/data/results/wipeoutr_fm" />
       <recent name="$PROJECT_DIR$/shell" />
       <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$/conf" />
-      <recent name="$PROJECT_DIR$/conf/evaluations/ts_runtime" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="at.tugraz.ist.ase.wipeoutr.model" />
@@ -76,7 +79,7 @@
       <recent name="at.tugraz.ist.ase.wipeoutr.app.data" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="at.tugraz.ist.ase.wipeoutr in WipeOutR" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WipeOutR" />
       <extension name="coverage">
@@ -91,8 +94,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="wipeoutr-image" />
+          <option name="containerName" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="JUnit.at.tugraz.ist.ase.wipeoutr in WipeOutR" />
         <item itemvalue="JUnit.at.tugraz.ist.ase.wipeoutr in WipeOutR" />
       </list>
@@ -313,7 +336,49 @@
       <option name="project" value="LOCAL" />
       <updated>1655048641253</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Update README.md">
+      <created>1655050998128</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1655050998128</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Add results for camera-ready-version">
+      <created>1655068986370</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1655068986370</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Add WipeOutR_T results for camera-ready-version">
+      <created>1655069034439</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1655069034439</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Fix ts_runtime_50_90_nonred.cfg">
+      <created>1655104314319</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1655104314319</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Add ts_runtime's results">
+      <created>1655105452134</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1655105452134</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Add Dockerfile">
+      <created>1655107504892</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1655107504892</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,11 +411,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Comment updated" />
-    <MESSAGE value="README updated" />
-    <MESSAGE value="Fix WipeOutRTModel" />
-    <MESSAGE value="Fix ConfigManager" />
-    <MESSAGE value="Add run.sh for wipeoutr_t" />
     <MESSAGE value="Add run.sh for ts_runtime" />
     <MESSAGE value="Add linux-2.6.33.3_nonred.txt" />
     <MESSAGE value="Add linux-2.6.3_50_90_s_nonred.testcases" />
@@ -369,9 +429,14 @@
     <MESSAGE value="Add docs" />
     <MESSAGE value="Add shell folder" />
     <MESSAGE value="Update README.md and Add move.sh" />
-    <MESSAGE value="Update README.md" />
     <MESSAGE value="Add linux-2.6.33.3_4370_new_nonred.txt and linux-2.6.33.3_16600_new_nonred.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add linux-2.6.33.3_4370_new_nonred.txt and linux-2.6.33.3_16600_new_nonred.txt" />
+    <MESSAGE value="Update README.md" />
+    <MESSAGE value="Add results for camera-ready-version" />
+    <MESSAGE value="Add WipeOutR_T results for camera-ready-version" />
+    <MESSAGE value="Fix ts_runtime_50_90_nonred.cfg" />
+    <MESSAGE value="Add ts_runtime's results" />
+    <MESSAGE value="Add Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Dockerfile" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

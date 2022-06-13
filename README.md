@@ -13,22 +13,26 @@ The research community can fully exploit this repository to reproduce the work d
 - [Repository structure](#repository-structure)
 - [Evaluation process](#evaluation-process)
 - [How to reproduce the experiment](#how-to-reproduce-the-experiment)
-  - [Use a CodeOcean capsule](#use-a-codeocean-capsule)
+  - [Build a Docker image](#build-a-docker-image)
   - [Use the standalone Java applications](#use-the-standalone-java-applications)
-  - [Get your copy to run offline](#get-your-copy-to-run-offline)
+  - [Build apps by yourself](#build-apps-by-yourself)
 
 ## Repository structure
 
-| *folder*         | *description*                                                                          |
-|------------------|----------------------------------------------------------------------------------------|
-| ./conf           | contains all configuration files used in the evaluation of the **WipeOutR** algorithms |
-| ./data           | stores *Linux-2.6.33.3* feature models, a test suite, and scenarios                    |
-| ./data/testsuite | stores a test suite of the original *Linux-2.6.33.3* feature model                     |
-| ./data/scenarios | contains scenarios selected to evaluate the **WipeOutR_T** algorithm                   |
-| ./docs           | guides of *jar* files                                                                  |
-| ./results        | where results will be stored                                                           |
-| ./src            | source code                                                                            |
-| ./shell          | bash scripts to execute the evaluations                                                |
+| *folder*         | *description*                                                                           |
+|------------------|-----------------------------------------------------------------------------------------|
+| ./conf           | contains all configuration files used in the evaluation of the **WipeOutR** algorithms  |
+| ./data           | stores *Linux-2.6.33.3* feature models, a test suite, and scenarios                     |
+| ./data/testsuite | stores a test suite of the original *Linux-2.6.33.3* feature model                      |
+| ./data/scenarios | contains scenarios selected to evaluate the **WipeOutR_T** algorithm                    |
+| ./data/results   | evaluation results published in the paper                                               |
+| ./docs           | guides of *jar* files                                                                   |
+| ./results        | where results will be stored                                                            |
+| ./src            | source code                                                                             |
+| ./shell          | bash scripts to execute the evaluations                                                 |
+| ./docker         | a bash script and a copy of configuration files, which are used to build a Docker image |
+| Dockerfile       | Dockerfile to build the Docker image                                                    |
+| settings.xml     | settings of the GitHub Maven repository                                                 |
 
 ## Evaluation process
 
@@ -175,15 +179,42 @@ For further details, please refer to the [solver_runtime.jar guideline](https://
 
 ## How to reproduce the experiment
 
-### Use a CodeOcean capsule
+### Build a Docker image
 
-The easiest way to reproduce the experiment is to use a [CodeOcean](https://codeocean.com) capsule.
-You can find our reproducible evaluation of **WipeOutR** algorithms [here](https://codeocean.com/capsule/5824065/tree/v1).
+> *Note:* The evaluation process in this Docker image would take 5 - 6 days to complete. If you want to reduce the runtime, 
+> you could reset the ```numIter``` parameter in configuration files (in the *./docker* folder) to 1.
 
-> Due to CodeOcean only supports Java 1.8, the code source on CodeOcean has the Java target version set to 1.8, and uses 
-> the CA-CDR library version 1.3.8-1, which is a version of the CA-CDR library compatible with Java 1.8.
-> 
-> The code source on this GitHub repository has the Java target version set to 17, and uses the CA-CDR library version 1.3.8.
+After downloading the repository, please replace USERNAME and TOKEN in the *settings.xml* file with your GitHub username and your personal access token
+(see [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)).
+
+Next, build a Docker image of the **WipeOutR** evaluations with the following command:
+
+```shell
+docker build -t wipeoutr-image .
+```
+
+Next, create a folder for the experiment results and copy results inside the Docker image to the folder:
+
+```shell
+mkdir results
+docker run --rm --entrypoint tar wipeoutr-image cC ./results . | tar xvC ./results
+```
+
+[//]: # (### Use a CodeOcean capsule)
+
+[//]: # ()
+[//]: # (The easiest way to reproduce the experiment is to use a [CodeOcean]&#40;https://codeocean.com&#41; capsule.)
+
+[//]: # (You can find our reproducible evaluation of **WipeOutR** algorithms [here]&#40;https://codeocean.com/capsule/5824065/tree/v1&#41;.)
+
+[//]: # ()
+[//]: # (> Due to CodeOcean only supports Java 1.8, the code source on CodeOcean has the Java target version set to 1.8, and uses )
+
+[//]: # (> the CA-CDR library version 1.3.8-1, which is a version of the CA-CDR library compatible with Java 1.8.)
+
+[//]: # (> )
+
+[//]: # (> The code source on this GitHub repository has the Java target version set to 17, and uses the CA-CDR library version 1.3.8.)
 
 ### Use the standalone Java applications
 
@@ -193,17 +224,20 @@ You can find our reproducible evaluation of **WipeOutR** algorithms [here](https
 > please go to Java's website at https://www.java.com/en/download/,
 > download and install the latest version.
 
+In this way of reproducing the experiment, you need to download the folders *./conf/*, *./data*, and *./shell/* from the repository.
+You need also create a *./results* folder for the experiment results.
+
 #### Download the standalone Java applications
 
-| *apps*                 | *description*                            |
-|------------------------|------------------------------------------|
-| [wipeoutr_t.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_t_v1.0)     | **WipeOutR_T** evaluation                    |
-| [ts_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_runtime_v1.0)     | Execution runtime of a set of test cases |
-| [wipeoutr_fm.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_fm_v1.0)    | **WipeOutR_FM** evaluation                   |
+| *apps*                                                                                            | *description*                            |
+|---------------------------------------------------------------------------------------------------|------------------------------------------|
+| [wipeoutr_t.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_t_v1.0)         | **WipeOutR_T** evaluation                |
+| [ts_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_runtime_v1.0)         | Execution runtime of a set of test cases |
+| [wipeoutr_fm.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/wipeoutr_fm_v1.0)       | **WipeOutR_FM** evaluation               |
 | [solver_runtime.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/solver_runtime_v1.0) | Solution search runtime                  |
-| [ts_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_gen_v1.0)         | Test suite generator                     |
-| [ts_select.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_select_v1.0)      | Scenarios selector                       |
-| [rc_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/rc_gen_v1.0)         | Redundant constraints generator          |
+| [ts_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_gen_v1.0)                 | Test suite generator                     |
+| [ts_select.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_select_v1.0)           | Scenarios selector                       |
+| [rc_gen.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/rc_gen_v1.0)                 | Redundant constraints generator          |
 
 Please download these apps, and put them into the *./app* folder.
 
@@ -211,16 +245,16 @@ Please download these apps, and put them into the *./app* folder.
 
 To facilitate the evaluation executions, we provide eight bash scripts as the following:
 
-| *apps*                | *description*                                                                                                                     | *estimated runtime*                   |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| ```run.sh```                | Execute all evaluations and get results for two evaluation tables - [Table 5](#wipeoutr_t-evaluation) and [Table 6](#wipeoutr_fm-evaluation)                                         | 5 - 6 days      |
-| ```run_wipeoutr_t.sh```     | Execute the **WipeOutR_T** evaluation and get results for *wr_t_runtime* elements in the [Table 5](#wipeoutr_t-evaluation)               | 4 - 5 days      |
-| ```run_ts_runtime.sh```     | Execute the test cases checks and get results for *ts_runtime*/*nonred_ts_runtime* elements in the [Table 5](#wipeoutr_t-evaluation) |                           |
-| ```run_wipeoutr_fm.sh```    | Execute the **WipeOutR_FM** evaluation and get results for *wr_fm_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation)             | 4 - 5 hours |
-| ```run_solver_runtime.sh``` | Execute the solution search and get results for *sol_runtime*/*nonred_sol_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation) |                           |
-| ```run_ts_gen.sh```         | Generate a test suite for the *Linux-2.6.33.3* feature model                                                                      | 4 - 5 days      |
-| ```run_ts_select.sh```      | Select 12 scenarios with the #T cardinalities of 10, 50, 100, 250, and the redundancy ratios of 0%, 50%, and 90%                  | 1 minute        |
-| ```run_rc_gen.sh```         | Generate redundant constraints for the *Linux-2.6.33.3* feature model                                                             | 15 - 20 minutes |
+| *apps*                      | *description*                                                                                                                                   | *estimated runtime* |
+|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| ```run.sh```                | Execute all evaluations and get results for two evaluation tables - [Table 5](#wipeoutr_t-evaluation) and [Table 6](#wipeoutr_fm-evaluation)    | 5 - 6 days          |
+| ```run_wipeoutr_t.sh```     | Execute the **WipeOutR_T** evaluation and get results for *wr_t_runtime* elements in the [Table 5](#wipeoutr_t-evaluation)                      | 4 - 5 days          |
+| ```run_ts_runtime.sh```     | Execute the test cases checks and get results for *ts_runtime*/*nonred_ts_runtime* elements in the [Table 5](#wipeoutr_t-evaluation)            | 1 - 2 hours         |
+| ```run_wipeoutr_fm.sh```    | Execute the **WipeOutR_FM** evaluation and get results for *wr_fm_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation)                   | 4 - 5 hours         |
+| ```run_solver_runtime.sh``` | Execute the solution search and get results for *sol_runtime*/*nonred_sol_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation)           | 2 - 3 minutes       |
+| ```run_ts_gen.sh```         | Generate a test suite for the *Linux-2.6.33.3* feature model                                                                                    | 4 - 5 days          |
+| ```run_ts_select.sh```      | Select 12 scenarios with the #T cardinalities of 10, 50, 100, 250, and the redundancy ratios of 0%, 50%, and 90%                                | 1 minute            |
+| ```run_rc_gen.sh```         | Generate redundant constraints for the *Linux-2.6.33.3* feature model                                                                           | 15 - 20 minutes     |
 
 To run these bash scripts on your system:
 
@@ -236,14 +270,14 @@ $ chmod u+x run.sh
 $ ./run.sh
 ```
 
-### Get your copy to run offline
+### Build apps by yourself
 
 > **JDK requirement:** OpenJDK 17.0.2
 
 #### Get the Maven dependencies from the GitHub package repository
 
 Our implementation depends on our [CA-CDR library](https://github.com/manleviet/CA-CDR-V2). Thus, after cloning the source code into your system,
-you need to add the below script in the *settings.xml* file to download the dependencies from the GitHub package repository.
+you need to add the below script in your *settings.xml* file (*not the settings.xml attached in the repository*) to download the dependencies from the GitHub package repository.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -293,7 +327,9 @@ $ mvn clean package --settings <path to settings.xml>
 
 #### Move *jar* files to the *./app* folder
 
-Use the bash script `move.sh` to move *jar* files to the *./app* folder.
+Use the bash script `move.sh` to move *jar* files to the *./app* folder. The script will create the *./app* folder.
+
+Next, create a *./results* folder to store the results.
 
 Finally, you could execute the evaluations using [bash scripts](#use-bash-scripts).
 
