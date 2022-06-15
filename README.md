@@ -97,11 +97,11 @@ For further details, we refer to the [ts_gen.jar guideline](https://github.com/A
 
 #### Step 2 - Scenario selection
 
-Based on the generated test suite in Step 1, we have selected 12 test scenarios with the test set cardinalities of 10, 50, 100, 250, and 
-the redundancy ratios of 0%, 50%, and 90%. Besides, for each selected redundant scenario,
+Based on the generated test suite in Step 1, we have selected 30 test scenarios with the test set cardinalities of 10, 50, 100, 250, 500, 1000 and 
+the redundancy ratios of 0%, 20%, 50%, 70%, and 90%. Besides, for each selected redundant scenario,
 we used the **WipeOutR_T** algorithm to obtain its non-redundant scenario, which is used in Step 4 to compare test case executions. 
 
-The folder *./data/scenarios* stores the selected scenarios.
+The folder *./data/scenarios* stores the selected scenarios (only 12 selected scenarios with the cardinalities of 10, 50, 100, 500, and the redundancy ratios of 0%, 50%, and 90%).
 
 [ts_select.jar](https://github.com/AIG-ist-tugraz/WipeOutR/releases/tag/ts_select_v1.0) is a *jar* file executing this step. 
 For further details, we refer to the [ts_select.jar guideline](https://github.com/AIG-ist-tugraz/WipeOutR/blob/main/docs/ts_select.md).
