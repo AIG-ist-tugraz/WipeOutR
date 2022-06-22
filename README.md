@@ -260,7 +260,7 @@ To facilitate the evaluation executions, we provide the following eight bash scr
 | ```run_wipeoutr_fm.sh```    | Executes the **WipeOutR_FM** evaluation and gets results for *wr_fm_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation)                | 4 - 5 hours         |
 | ```run_solver_runtime.sh``` | Executes the solution search and gets results for *sol_runtime*/*nonred_sol_runtime* elements in the [Table 6](#wipeoutr_fm-evaluation)        | 2 - 3 minutes       |
 | ```run_ts_gen.sh```         | Generates a test suite for the *Linux-2.6.33.3* feature model                                                                                  | 4 - 5 days          |
-| ```run_ts_select.sh```      | Selects 12 scenarios with the #T cardinalities of 10, 50, 100, 250, and the redundancy ratios of 0%, 50%, and 90%                              | 1 minute            |
+| ```run_ts_select.sh```      | Selects 12 scenarios with the #T cardinalities of 10, 50, 100, 250, 500, 1000 and the redundancy ratios of 0%, 20%, 50%, 70%, and 90%                              | 1 minute            |
 | ```run_rc_gen.sh```         | Generates redundant constraints for the *Linux-2.6.33.3* feature model                                                                         | 15 - 20 minutes     |
 
 To run these bash scripts in your system:
