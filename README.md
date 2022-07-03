@@ -192,7 +192,7 @@ You can reproduce the experiment by choosing one of three following ways:
 > you could reset the ```numIter``` parameter in configuration files (in the *./docker* folder) to 1.
 
 After downloading the repository, please replace USERNAME and TOKEN in the *settings.xml* file with your GitHub username and your personal access token
-(see [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)).
+(see [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)). Note: your token must have the ```read:packages``` scope.
 
 Next, build a Docker image of the **WipeOutR** evaluations with the following command:
 
@@ -321,7 +321,7 @@ you need to add the below script in your *settings.xml* file (*not the settings.
 </settings>
 ```
 Replacing USERNAME with your GitHub username, and TOKEN with your personal access token 
-(see [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)).
+(see [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)). Note: your token must have the ```read:packages``` scope.
 
 #### Compile the source code
 
