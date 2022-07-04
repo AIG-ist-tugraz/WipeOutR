@@ -4,16 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Update README.md">
+    <list default="true" id="49b4e23b-ce16-446c-b746-64f744a532b2" name="Changes" comment="Add wipeout_t_linux-2.6.33.3_250_0.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/rc_gen.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/rc_gen.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/solver_runtime.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/solver_runtime.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ts_gen.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ts_gen.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ts_runtime.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ts_runtime.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ts_select.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ts_select.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/wipeoutr_fm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/wipeoutr_fm.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/wipeoutr_t.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/wipeoutr_t.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_100_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_100_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_100_50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_100_50.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_100_90.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_100_90.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_10_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_10_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_10_50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_10_50.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_250_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_250_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_250_50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_250_50.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_250_90.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_250_90.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_50_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_50_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_50_50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_50_50.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_50_90.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/wipeoutr_t/wipeout_t_linux-2.6.33.3_50_90.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/10/10_0/linux-2.6.3_10_0_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/10/10_0/linux-2.6.3_10_0_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/10/10_50/linux-2.6.3_10_50_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/10/10_50/linux-2.6.3_10_50_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/10/10_50_nonred/linux-2.6.3_10_50_s_nonred.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/10/10_50_nonred/linux-2.6.3_10_50_s_nonred.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/100/100_0/linux-2.6.3_100_0_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/100/100_0/linux-2.6.3_100_0_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/100/100_50/linux-2.6.3_100_50_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/100/100_50/linux-2.6.3_100_50_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/100/100_50_nonred/linux-2.6.3_100_50_s_nonred.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/100/100_50_nonred/linux-2.6.3_100_50_s_nonred.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/100/100_90/linux-2.6.3_100_90_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/100/100_90/linux-2.6.3_100_90_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/100/100_90_nonred/linux-2.6.3_100_90_s_nonred.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/100/100_90_nonred/linux-2.6.3_100_90_s_nonred.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/250/250_0/linux-2.6.3_250_0_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/250/250_0/linux-2.6.3_250_0_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/250/250_50/linux-2.6.3_250_50_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/250/250_50/linux-2.6.3_250_50_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/250/250_50_nonred/linux-2.6.3_250_50_s_nonred.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/250/250_50_nonred/linux-2.6.3_250_50_s_nonred.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/250/250_90/linux-2.6.3_250_90_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/250/250_90/linux-2.6.3_250_90_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/250/250_90_nonred/linux-2.6.3_250_90_s_nonred.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/250/250_90_nonred/linux-2.6.3_250_90_s_nonred.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/50/50_0/linux-2.6.3_50_0_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/50/50_0/linux-2.6.3_50_0_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/50/50_50/linux-2.6.3_50_50_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/50/50_50/linux-2.6.3_50_50_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/50/50_50_nonred/linux-2.6.3_50_50_s_nonred.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/50/50_50_nonred/linux-2.6.3_50_50_s_nonred.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/50/50_90/linux-2.6.3_50_90_s.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/50/50_90/linux-2.6.3_50_90_s.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scenarios/50/50_90_nonred/linux-2.6.3_50_90_s_nonred.testcases" beforeDir="false" afterPath="$PROJECT_DIR$/data/scenarios/50/50_90_nonred/linux-2.6.3_50_90_s_nonred.testcases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/data/TestCasesSelectorV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/wipeoutr/app/data/TestCasesSelectorV2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +51,11 @@
     <option name="done" value="true" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -38,7 +65,9 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2AIW7AWy0M2I6jTfZCCs7RhvFp3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -50,7 +79,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_directory_selection": "/Users/manleviet/Development/GitHub/WipeOutR/src/main/java",
-    "last_opened_file_path": "/Users/manleviet/Development/GitHub/WipeOutR/data/results/wipeoutr_t",
+    "last_opened_file_path": "/Users/manleviet/Development/GitHub/WipeOutR/data/new_scenarios/scenarios/250/250_90_nonred",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,18 +93,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data/results/wipeoutr_t" />
-      <recent name="$PROJECT_DIR$/shell" />
-      <recent name="$PROJECT_DIR$/conf/docker" />
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/data/new_scenarios/scenarios/250/250_90_nonred" />
+      <recent name="$PROJECT_DIR$/data/new_scenarios/scenarios/250/250_90" />
+      <recent name="$PROJECT_DIR$/data/new_scenarios/scenarios/250/250_50_nonred" />
+      <recent name="$PROJECT_DIR$/data/new_scenarios/scenarios/250/250_50" />
+      <recent name="$PROJECT_DIR$/data/new_scenarios/scenarios/250/250_0" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/docker" />
       <recent name="$PROJECT_DIR$/data/results/wipeoutr_t" />
       <recent name="$PROJECT_DIR$/data/results/wipeoutr_fm" />
       <recent name="$PROJECT_DIR$/shell" />
-      <recent name="$PROJECT_DIR$/docs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="at.tugraz.ist.ase.wipeoutr.model" />
@@ -85,7 +114,20 @@
       <recent name="at.tugraz.ist.ase.wipeoutr.app.data" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Dockerfile">
+  <component name="RunManager" selected="Application.TestCasesSelectorV2">
+    <configuration name="TestCasesSelectorV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="at.tugraz.ist.ase.wipeoutr.app.data.TestCasesSelectorV2" />
+      <module name="WipeOutR" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="at.tugraz.ist.ase.wipeoutr.app.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="at.tugraz.ist.ase.wipeoutr in WipeOutR" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WipeOutR" />
       <extension name="coverage">
@@ -120,6 +162,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestCasesSelectorV2" />
         <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="JUnit.at.tugraz.ist.ase.wipeoutr in WipeOutR" />
@@ -138,6 +181,14 @@
       <workItem from="1654697411039" duration="16828000" />
       <workItem from="1654778784123" duration="42874000" />
       <workItem from="1655027243006" duration="84000" />
+      <workItem from="1655247605822" duration="8564000" />
+      <workItem from="1655287626435" duration="292000" />
+      <workItem from="1655362942261" duration="12000" />
+      <workItem from="1655414300504" duration="1563000" />
+      <workItem from="1655814462271" duration="604000" />
+      <workItem from="1655820205689" duration="598000" />
+      <workItem from="1656665872861" duration="614000" />
+      <workItem from="1656921702150" duration="10465000" />
     </task>
     <task id="LOCAL-00001" summary="First commit - camera-ready-version for SPLC'22">
       <created>1654706580498</created>
@@ -398,7 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655111100783</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Fix ts_select.cfg">
+      <created>1655249851547</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1655249851547</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Add wipeout_t_linux-2.6.33.3_250_0.txt">
+      <created>1655250416381</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1655250416381</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add run.sh for ts_runtime" />
     <MESSAGE value="Add linux-2.6.33.3_nonred.txt" />
     <MESSAGE value="Add linux-2.6.3_50_90_s_nonred.testcases" />
     <MESSAGE value="Add run.sh for solver_runtime" />
@@ -441,7 +505,6 @@
     <MESSAGE value="Add table of contents to README.md" />
     <MESSAGE value="Add linux-2.6.3_100_90_s_nonred.testcases" />
     <MESSAGE value="Add linux-2.6.3_100_50_s_nonred.testcases" />
-    <MESSAGE value="Fix ts_select.cfg" />
     <MESSAGE value="Add ts_gen.md" />
     <MESSAGE value="Add linux-2.6.3_250_90_s_nonred.testcases" />
     <MESSAGE value="Add linux-2.6.3_250_50_s_nonred.testcases" />
@@ -456,7 +519,9 @@
     <MESSAGE value="Add ts_runtime's results" />
     <MESSAGE value="Add Dockerfile" />
     <MESSAGE value="Update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
+    <MESSAGE value="Fix ts_select.cfg" />
+    <MESSAGE value="Add wipeout_t_linux-2.6.33.3_250_0.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add wipeout_t_linux-2.6.33.3_250_0.txt" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
