@@ -14,11 +14,11 @@ Evaluating WipeOutR_T runtime...
 	The number of Consistency checks: 39.0
 	Time for running: 31.289402544
 		Non-redundant test cases: 5
-		USB_EHCI_TT_NEWSCHED
-		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
-		STACKTRACE_SUPPORT & BINFMT_ELF & ~X86_CMPXCHG64 & ~FUSE_FS
-		~IOMMU_STRESS
-		~CYCLADES
+		~IP_NF_TARGET_REDIRECT
+        ~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+        ~IOMMU_STRESS
+        DEBUG_KMEMLEAK_TEST
+        USB_EHCI_TT_NEWSCHED
 	Done - linux-2.6.3_10_50_s.testcases
 	========================
 	LINUX-2.6.3_10_50_S.TESTCASES
@@ -28,11 +28,11 @@ Evaluating WipeOutR_T runtime...
 	The number of Consistency checks: 39.0
 	Time for running: 33.47997018
 		Non-redundant test cases: 5
-		USB_EHCI_TT_NEWSCHED
-		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
-		STACKTRACE_SUPPORT & BINFMT_ELF & ~X86_CMPXCHG64 & ~FUSE_FS
-		~IOMMU_STRESS
-		~CYCLADES
+		~IP_NF_TARGET_REDIRECT
+        ~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+        ~IOMMU_STRESS
+        DEBUG_KMEMLEAK_TEST
+        USB_EHCI_TT_NEWSCHED
 	Done - linux-2.6.3_10_50_s.testcases
 	========================
 	LINUX-2.6.3_10_50_S.TESTCASES
@@ -42,11 +42,11 @@ Evaluating WipeOutR_T runtime...
 	The number of Consistency checks: 39.0
 	Time for running: 31.430683638
 		Non-redundant test cases: 5
-		USB_EHCI_TT_NEWSCHED
-		~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
-		STACKTRACE_SUPPORT & BINFMT_ELF & ~X86_CMPXCHG64 & ~FUSE_FS
-		~IOMMU_STRESS
-		~CYCLADES
+		~IP_NF_TARGET_REDIRECT
+        ~HZ_300_alt & ~RCU_TRACE & ~PM_SLEEP_SMP & ~GENERIC_HARDIRQS & MFD_MC13783
+        ~IOMMU_STRESS
+        DEBUG_KMEMLEAK_TEST
+        USB_EHCI_TT_NEWSCHED
 	Done - linux-2.6.3_10_50_s.testcases
 Average number of Consistency checks: 39.0
 Average time for running: 32.066685454 seconds

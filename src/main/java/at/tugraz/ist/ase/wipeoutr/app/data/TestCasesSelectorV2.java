@@ -53,7 +53,7 @@ public class TestCasesSelectorV2 {
 
     public static void main(String[] args) throws IOException {
         String programTitle = "Test Cases Selector V2";
-        String usage = "Usage: java -jar ts_select.jar [options]]";
+        String usage = "Usage: java -jar ts_select.jar [options]";
 
         // Parse command line arguments
         CmdLineOptions cmdLineOptions = new CmdLineOptions(null, programTitle, null, usage);
@@ -99,10 +99,12 @@ public class TestCasesSelectorV2 {
 
         System.out.println("\tSelecting...");
 
+        // Group A
         List<ITestCase> testCasesWith5f = new ArrayList<>(testSuite.getTestCases().stream()
                 .filter(tc -> tc.getAssignments().size() == 5).toList());
         Collections.shuffle(testCasesWith5f, new Random(RandomUtils.getSEED())); // random with a seed = 141982L
 
+        // Group B
         List<ITestCase> otherTestCases = new ArrayList<>(testSuite.getTestCases().stream()
                 .filter(tc -> tc.getAssignments().size() < 5).toList());
         Collections.shuffle(otherTestCases, new Random(RandomUtils.getSEED())); // random with a seed = 141982L
@@ -116,6 +118,8 @@ public class TestCasesSelectorV2 {
             while (selectedTestCasesFrom5f.size() < nonRedundantToGenRed) {
                 selectedTestCasesFrom5f.add(testCasesWith5f.remove(0));
             }
+
+            List<ITestCase> selectedTestCasesFromOther = new LinkedList<>();
 
             for (int i = cfg.getRedRatios().size() - 1; i >= 0; i--) {
                 double redRatio = cfg.getRedRatios().get(i);
@@ -140,20 +144,25 @@ public class TestCasesSelectorV2 {
                 System.out.println("Test cases generated:" + testcases.size());
                 testcases.forEach(tc -> System.out.println("\t\t\t" + tc));
 
+                alltestcases.addAll(selectedTestCasesFromOther);
+                System.out.println("#test cases already selected from the previous scenario: " + selectedTestCasesFromOther.size());
+                System.out.println("#test cases still need to be selected: " + (nonRedundant - selectedTestCasesFromOther.size()));
                 System.out.println("Test cases selected from other:");
-                int j = 0;
-                while (j < nonRedundant) {
+                int j = 1;
+                while (selectedTestCasesFromOther.size() < nonRedundant) {
                     // check and ignore redundant test cases
                     ITestCase tc = otherTestCases.remove(0);
 
-                    if (alltestcases.stream().anyMatch(t -> new HashSet<>(t.getAssignments()).containsAll(tc.getAssignments()))) {
-                        System.out.println("Trung: " + tc);
-                        otherTestCases.add(tc);
+                    if (alltestcases.stream().anyMatch(t -> new HashSet<>(t.getAssignments()).containsAll(tc.getAssignments())
+                            || new HashSet<>(tc.getAssignments()).containsAll(t.getAssignments()))) {
+                        System.out.println("Redundant: " + tc);
+                        otherTestCases.add(tc); // add to the end of the list
                         continue;
                     }
 
+                    selectedTestCasesFromOther.add(tc);
                     alltestcases.add(tc);
-                    System.out.println("\t\t\t" + tc);
+                    System.out.println("\t\t\t" + j + ": " + tc);
                     j++;
                 }
 
