@@ -32,6 +32,7 @@ import static at.tugraz.ist.ase.csp2choco.CSP2ChocoTranslator.loadConstraints;
 
 /**
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Migrated to CA-CDR-V2
  */
 @Slf4j
 public class WipeOutR_FM_Model2 extends CDRModel implements IChocoModel, IKBRedundancyDetectable {

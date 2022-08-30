@@ -30,6 +30,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Migrated to CA-CDR-V2
  */
 class WipeOutRFMTest {
     @Test

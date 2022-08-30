@@ -34,6 +34,7 @@ import static at.tugraz.ist.ase.eval.PerformanceEvaluator.*;
  * // return(CFΔ)
  *
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Migrated to CA-CDR-V2
  */
 @Slf4j
 public class WipeOutR_FM {

@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
+ * Migrated to CA-CDR-V2
  */
 public interface IKBRedundancyDetectable {
     /**

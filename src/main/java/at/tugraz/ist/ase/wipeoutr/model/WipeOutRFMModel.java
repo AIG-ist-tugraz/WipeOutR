@@ -25,6 +25,7 @@ import java.util.List;
 
 /**
  * Manages/Prepares the inputs (constraints/test cases) for the WipeOutR_FM algorithm.
+ * Migrated to CA-CDR-V2
  *
  * @author Viet-Man Le (vietman.le@ist.tugraz.at)
  */
