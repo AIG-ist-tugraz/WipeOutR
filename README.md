@@ -4,7 +4,7 @@
 This approach has the potential to significantly improve the quality of feature model development and configuration.
 
 This repository shows the implementation and the evaluation of the **WipeOutR** algorithms,
-which will be presented at the SPLC 2022 in the paper entitled
+presented at the SPLC 2022 in the paper entitled
 *WipeOutR: Automated Redundancy Detection for Feature Models*.
 The research community can fully exploit this repository to reproduce the work described in our paper.
 
