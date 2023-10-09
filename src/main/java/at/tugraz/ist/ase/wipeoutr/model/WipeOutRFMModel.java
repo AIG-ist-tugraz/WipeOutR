@@ -67,7 +67,7 @@ public class WipeOutRFMModel extends CDRModel implements IChocoModel {
         Collections.reverse(C);
         this.setPossiblyFaultyConstraints(C);
 
-        // doesn't need the root constraint since WipeOutR_FM only checks isconsistent(CF - c1 U ~t1)
+        // doesn't need the root constraint since WipeOutR_FM only checks isconsistent(CF - c1 U ~c1)
 
         // removes all Choco constraints
         model.unpost(model.getCstrs());
